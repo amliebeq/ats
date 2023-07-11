@@ -4,7 +4,7 @@ import { listRemoved } from '../login_page/loginSlice';
 
 export const DeleteList = ({ list }) => {
     const dispatch = useDispatch()
-    
+
     const handleDeleteClick = (e) => {
         e.preventDefault()
         fetch(`/lists/${list.id}`, {
@@ -15,6 +15,6 @@ export const DeleteList = ({ list }) => {
     }
 
     return (
-        <button onClick={handleDeleteClick}>Delete</button>
+        <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" onClick={handleDeleteClick}>Delete</button>
     )
 }

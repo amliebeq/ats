@@ -23,20 +23,24 @@ const slice = createSlice({
             state.user.lists.push(action.payload)
         },
         listRemoved: (state, action) => {
-            const index = state.user.lists.findIndex((list) => list === action.payload)
+            const index = state.user.lists.findIndex((list) => list.id === action.payload)
             state.user.lists.splice(index, 1)
         },
         applicantRemoved: (state, action) => {
-            const index = state.user.applicants.findIndex((applicant) => applicant === action.payload)
+            const index = state.user.applicants.findIndex((applicant) => applicant.id === action.payload)
             state.user.applicants.splice(index, 1)
         },
         jobRemoved: (state, action) => {
-            const index = state.user.jobs.findIndex((job) => job === action.payload)
+            const index = state.user.jobs.findIndex((job) => job.id === action.payload)
             state.user.jobs.splice(index, 1)
+        },
+        listEdited: (state, action) => {
+            const index = state.user.lists.findIndex((list) => list.id === action.payload.id)
+            state.user.lists[index].name = action.payload.name
         }
     },
 })
 
-export const { toggleAccount, userAdded, jobAdded, applicantAdded, listAdded, listRemoved, applicantRemoved, jobRemoved } = slice.actions
+export const { toggleAccount, userAdded, jobAdded, applicantAdded, listAdded, listRemoved, applicantRemoved, jobRemoved, listEdited } = slice.actions
 
 export default slice.reducer
