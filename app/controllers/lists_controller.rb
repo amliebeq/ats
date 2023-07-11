@@ -1,12 +1,26 @@
 class ListsController < ApplicationController
+    def index
+        lists = List.all
+        render json: lists, status: :ok
+    end
+
     def create
-        list = Applicant.find_by(id: params[:applicant_id]).lists << List.create(list_params)
+        list = List.create(list_params)
         if list
-            render json: List.last, status: :created
+            render json: list, status: :created
         else
             render json: { errors: list.errors.full_messages }, status: :unprocessable_entity 
         end
     end
+
+    # def create
+    #     list = Applicant.find_by(id: params[:applicant_id]).lists << List.create(list_params)
+    #     if list
+    #         render json: List.last, status: :created
+    #     else
+    #         render json: { errors: list.errors.full_messages }, status: :unprocessable_entity 
+    #     end
+    # end
 
     def destroy
         user = User.find_by(id: session[:user_id])

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :jobs, only: [:create, :update, :destroy]
-  resources :lists, only: [:create, :update, :destroy]
+  resources :jobs, only: [:create, :update, :destroy, :index]
+  resources :lists, only: [:create, :update, :destroy, :index]
   resources :notes, only: [:create, :update, :destroy]
   resources :applicants, only: [:create, :update, :destroy, :index]
   resources :users, only: [:index]
