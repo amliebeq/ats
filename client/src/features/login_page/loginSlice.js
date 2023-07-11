@@ -37,6 +37,13 @@ const slice = createSlice({
         listEdited: (state, action) => {
             const index = state.user.lists.findIndex((list) => list.id === action.payload.id)
             state.user.lists[index].name = action.payload.name
+        },
+        jobEdited: (state, action) => {
+            const index = state.user.jobs.findIndex((job) => job.id === action.payload.id)
+            state.user.jobs[index].title = action.payload.title
+            state.user.jobs[index].pay_rate = action.payload.pay_rate
+            state.user.jobs[index].location = action.payload.location
+            state.user.jobs[index].description = action.payload.description
         }
     },
 })
