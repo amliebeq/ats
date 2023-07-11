@@ -1,4 +1,5 @@
 import React from 'react';
+import { DeleteJob } from './DeleteJob';
 
 export const Job = ({ job }) => {
     return (
@@ -8,6 +9,7 @@ export const Job = ({ job }) => {
             <li>Location: {job.location}</li>
             <li>Pay Range: ${job.pay_rate}</li>
             <li>Description: {job.description}</li>
+            <DeleteJob job={job} />
         </ul>
     )
 }

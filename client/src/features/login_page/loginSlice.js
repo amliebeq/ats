@@ -29,10 +29,14 @@ const slice = createSlice({
         applicantRemoved: (state, action) => {
             const index = state.user.applicants.findIndex((applicant) => applicant === action.payload)
             state.user.applicants.splice(index, 1)
+        },
+        jobRemoved: (state, action) => {
+            const index = state.user.jobs.findIndex((job) => job === action.payload)
+            state.user.jobs.splice(index, 1)
         }
     },
 })
 
-export const { toggleAccount, userAdded, jobAdded, applicantAdded, listAdded, listRemoved, applicantRemoved } = slice.actions
+export const { toggleAccount, userAdded, jobAdded, applicantAdded, listAdded, listRemoved, applicantRemoved, jobRemoved } = slice.actions
 
 export default slice.reducer

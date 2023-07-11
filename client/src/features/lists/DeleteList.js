@@ -4,6 +4,7 @@ import { listRemoved } from '../login_page/loginSlice';
 
 export const DeleteList = ({ list }) => {
     const dispatch = useDispatch()
+    
     const handleDeleteClick = (e) => {
         e.preventDefault()
         fetch(`/lists/${list.id}`, {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { DeleteApplicant } from './DeleteApplicant';
 
 export const Applicant = ({ applicant }) => {
     const lists = applicant.lists.map(list => <li key={list.id}>{list.name}</li>)
@@ -12,6 +13,7 @@ export const Applicant = ({ applicant }) => {
             <li>Location: {applicant.city}, {applicant.state}</li>
             <li>Lists:</li>
             <ul>{lists}</ul>
+            <DeleteApplicant applicant={applicant} />
         </ul>
     )
 }
