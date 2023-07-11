@@ -44,10 +44,22 @@ const slice = createSlice({
             state.user.jobs[index].pay_rate = action.payload.pay_rate
             state.user.jobs[index].location = action.payload.location
             state.user.jobs[index].description = action.payload.description
+        },
+        applicantEdited: (state, action) => {
+            const index = state.user.applicants.findIndex((applicant) => applicant.id === action.payload.id)
+            console.log(action.payload)
+            console.log(state.user.applicants[index])
+            state.user.applicants[index].city = action.payload.city
+            state.user.applicants[index].email = action.payload.email
+            state.user.applicants[index].first_name = action.payload.first_name
+            state.user.applicants[index].last_name = action.payload.last_name
+            state.user.applicants[index].phone = action.payload.phone
+            state.user.applicants[index].position = action.payload.position
+            state.user.applicants[index].state = action.payload.state
         }
     },
 })
 
-export const { toggleAccount, userAdded, jobAdded, applicantAdded, listAdded, listRemoved, applicantRemoved, jobRemoved, listEdited } = slice.actions
+export const { toggleAccount, userAdded, jobAdded, applicantAdded, listAdded, listRemoved, applicantRemoved, jobRemoved, listEdited, jobEdited, applicantEdited } = slice.actions
 
 export default slice.reducer

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { jobEdited } from '../login_page/loginSlice';
 
 export const EditJob = ({ job, setFormVisible }) => {
     const [editJobName, setEditJobName] = useState(`${job.title}`)
     const [editJobPay, setEditJobPay] = useState(`${job.pay_rate}`)
     const [editJobLocation, setEditJobLocation] = useState(`${job.location}`)
     const [editJobDescription, setEditJobDescription] = useState(`${job.description}`)
+    const dispatch = useDispatch()
 
     const onJobNameChange = (e) => setEditJobName(e.target.value)
     const onJobPayChange = (e) => setEditJobPay(e.target.value)
@@ -13,6 +16,17 @@ export const EditJob = ({ job, setFormVisible }) => {
 
     const onEditSubmit = (e) => {
         e.preventDefault()
+        const data = {id: job.id, title: editJobName, pay_rate: editJobPay, location: editJobLocation, description: editJobDescription}
+        fetch (`/jobs/${job.id}`, {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json",
+              },
+            body: JSON.stringify(data),
+        })
+        .then((r) => r.json())
+        .then((job) => dispatch(jobEdited(job)))
+        setFormVisible(false)
     }
 
     return (

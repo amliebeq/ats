@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get "/me", to: "users#show"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  patch "/add_applicant_to_list", to: "lists#addApplicantToList"
 end

@@ -10,7 +10,6 @@ export const EditList = ({ setEdit, list }) => {
 
     const onEditSubmitClick = (e) => {
         e.preventDefault()
-        dispatch(listEdited({id: list.id, name: name}))
         fetch (`/lists/${list.id}`, {
             method: 'PATCH',
             headers: {
@@ -21,7 +20,7 @@ export const EditList = ({ setEdit, list }) => {
             }),
         })
         .then((r) => r.json())
-        .then((name) => setName(name))
+        .then((name) => dispatch(listEdited(name)))
         setEdit(false)      
     }
 
