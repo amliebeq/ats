@@ -8,6 +8,7 @@ import { SideBar } from "./features/navigation/SideBar";
 import './App.css'
 import { JobsList } from "./features/Jobs/JobList";
 import { ListList } from "./features/lists/ListList";
+import { ApplicantDetail } from "./features/applicants/ApplicantDetail";
 
 function App() {
   const dispatch = useDispatch()
@@ -21,7 +22,7 @@ function App() {
         r.json().then ((user) => dispatch(userAdded(user)))
       }
     })
-  }, [])
+  }, [dispatch])
 
   if (!user) return <Login />
 
@@ -32,6 +33,9 @@ function App() {
         <Switch>
           <Route exact path = '/applicants'>
             <ApplicantList />
+          </Route>
+          <Route exact path = '/applicants/:id'>
+            <ApplicantDetail />
           </Route>
           <Route exact path = '/jobs'>
             <JobsList />

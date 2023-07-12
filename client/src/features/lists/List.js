@@ -4,7 +4,6 @@ import { EditList } from './EditList';
 
 export const List = ({ list }) => {
     const [edit, setEdit] = useState(false)
-
     
     const handleEditClick = () => setEdit(!edit)
 

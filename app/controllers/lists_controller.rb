@@ -14,10 +14,10 @@ class ListsController < ApplicationController
     end
 
     def addApplicantToList
-        list = List.find_by(id: params[:list_id])
+        list = List.find_by(id: params[:list_id].to_i)
         applicant = Applicant.find_by(id: params[:applicant_id])
         if list.applicants << applicant
-            render json: list, status: :created
+            render json: {list_id: list.id, applicant_id: applicant.id}, status: :created
         else
             render json: { errors: list.errors.full_messages }, status: :unprocessable_entity 
         end
