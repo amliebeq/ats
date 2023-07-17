@@ -1,0 +1,38 @@
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { applicantAddedToJob } from '../login_page/loginSlice';
+
+export const AddApplicantToJob = ({ applicant, setShowCandidateJobForm }) => {
+    const jobs = useSelector(state => state.login.user.jobs)
+    const [job, setJob] = useState('Select a job below')
+    const dispatch = useDispatch()
+
+    const handleJobChange = (e) => setJob(e.target.value)
+
+    const handleAddToJobClick = (e) => {
+        e.preventDefault()
+        const data = {job_id: job, applicant_id: applicant.id}
+        fetch (`/add_applicant_to_job`, {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json",
+              },
+            body: JSON.stringify(data),
+        })
+        .then((r) => r.json())
+        .then((data) => {
+            dispatch(applicantAddedToJob(data))
+        })
+        setShowCandidateJobForm(false)
+    }
+
+    return(
+        <form onSubmit={handleAddToJobClick}>
+            <select onChange={handleJobChange}>
+                <option value='Select a job below'>'Select a job below'</option>
+                {jobs.map((job) => <option key={job.id} value={job.id}>{job.title}</option>)}
+            </select>
+            <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">Submit</button>
+        </form>
+    )
+}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_17_150405) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_17_181450) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -53,8 +53,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_17_150405) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.integer "job_id"
     t.string "status", default: "New"
+  end
+
+  create_table "applicants_jobs", id: false, force: :cascade do |t|
+    t.bigint "applicant_id"
+    t.bigint "job_id"
+    t.index ["applicant_id", "job_id"], name: "index_applicants_jobs_on_applicant_id_and_job_id", unique: true
+    t.index ["applicant_id"], name: "index_applicants_jobs_on_applicant_id"
+    t.index ["job_id"], name: "index_applicants_jobs_on_job_id"
   end
 
   create_table "applicants_lists", id: false, force: :cascade do |t|
@@ -119,6 +126,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_17_150405) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "applicants_jobs", "applicants"
+  add_foreign_key "applicants_jobs", "jobs"
   add_foreign_key "applicants_lists", "applicants"
   add_foreign_key "applicants_lists", "lists"
   add_foreign_key "resumes", "applicants"

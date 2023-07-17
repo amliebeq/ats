@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { DeleteJob } from './DeleteJob';
 import { EditJob } from './EditJob';
+import { RemoveApplicantFromJob } from './RemoveApplicantFromJob';
 
 export const Job = ({ job }) => {
     const [formVisible, setFormVisible] = useState(false)
@@ -14,6 +15,16 @@ export const Job = ({ job }) => {
         <li>Location: {job.location}</li>
         <li>Pay Range: ${job.pay_rate}</li>
         <li>Description: {job.description}</li>
+        <ul>
+            Candidates:
+            {job.applicants.map((applicant) => {
+                return (
+                    <div>
+                <a href={`/applicants/${applicant.id}`} target="_blank" rel="noopener noreferrer" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">{applicant.first_name} {applicant.last_name}</a>
+                <RemoveApplicantFromJob job={job} applicant={applicant} />
+                </div>
+            )})}
+        </ul>
     </ul>
 
     return (

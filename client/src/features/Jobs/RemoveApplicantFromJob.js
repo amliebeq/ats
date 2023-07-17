@@ -1,0 +1,21 @@
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { applicantRemovedFromJob } from '../login_page/loginSlice';
+
+export const RemoveApplicantFromJob = ({ job, applicant }) => {
+    const dispatch = useDispatch()
+    const handleRemoveClick = () => {
+        const data = {applicant_id: applicant.id, job_id: job.id}
+        fetch(`/remove_applicant_from_job`, {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json",
+              },
+            body: JSON.stringify(data),
+        })
+        dispatch(applicantRemovedFromJob(data))
+    }
+    return (
+        <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" onClick={handleRemoveClick}>Remove</button>
+    )
+}

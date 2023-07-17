@@ -1,6 +1,6 @@
 class Job < ApplicationRecord
     belongs_to :user
-    has_many :applicants
+    has_and_belongs_to_many :applicants
 
     validates :title, presence: true
     validates :description, presence: true, length: { minimum: 50 }

@@ -33,6 +33,26 @@ class JobsController < ApplicationController
         end
     end
 
+    def addApplicantToJob
+        job = Job.find_by(id: params[:job_id].to_i)
+        applicant = Applicant.find_by(id: params[:applicant_id])
+        if job.applicants << applicant
+            render json: {job_id: job.id, applicant_id: applicant.id}, status: :created
+        else
+            render json: { errors: job.errors.full_messages }, status: :unprocessable_entity 
+        end
+    end
+
+    def removeApplicantFromJob
+        applicant = Applicant.find_by(id: params[:applicant_id])
+        job = Job.find_by(id: params[:job_id])
+        if applicant.jobs.delete(job)
+            render json: job, status: :ok
+        else
+            render json: { errors: job.errors.full_messages }, status: :unprocessable_entity
+        end
+    end
+
     private
     def job_params
         params.permit(:title, :description, :pay_rate, :location, :company, :user_id)

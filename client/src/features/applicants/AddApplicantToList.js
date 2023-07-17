@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { applicantAddedToList, listAddedToApplicant } from '../login_page/loginSlice';
 
-export const AddApplicantToList = ({ applicant, setShowCandidatelistForm }) => {
+export const AddApplicantToList = ({ applicant, setShowCandidateListForm }) => {
     const lists = useSelector(state => state.login.user.lists)
     const [list, setList] = useState('Select a list below')
     const dispatch = useDispatch()
@@ -24,7 +24,7 @@ export const AddApplicantToList = ({ applicant, setShowCandidatelistForm }) => {
             dispatch(applicantAddedToList(data))
             dispatch(listAddedToApplicant(data))
         })
-        setShowCandidatelistForm(false)
+        setShowCandidateListForm(false)
     }
 
     return(

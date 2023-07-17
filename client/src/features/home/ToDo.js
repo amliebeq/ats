@@ -3,7 +3,7 @@ import { RemoveToDo } from './RemoveToDo';
 
 export const ToDo = ({ toDo }) => {
     return (
-        <div>
+        <div className='flex flex-row'>
             <p>{toDo.item}</p>
             <RemoveToDo toDo={toDo} />
         </div>

@@ -3,6 +3,7 @@ class Applicant < ApplicationRecord
     has_many :notes
     belongs_to :user
     has_and_belongs_to_many :lists
+    has_and_belongs_to_many :jobs
 
     validates :first_name, presence: true
     validates :last_name, presence: true

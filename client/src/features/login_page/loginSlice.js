@@ -95,9 +95,19 @@ const slice = createSlice({
             const index = state.user.to_dos.findIndex((item) => item.id === action.payload)
             state.user.to_dos.splice(index, 1)
         },
+        applicantRemovedFromJob: (state, action) => {
+            const jobIndex = state.user.jobs.findIndex(job => job.id === action.payload.job_id)
+            const applicantIndex = state.user.jobs[jobIndex].applicants.findIndex(applicant => applicant.id === action.payload.applicant_id)
+            state.user.jobs[jobIndex].applicants.splice(applicantIndex, 1)
+        },
+        applicantAddedToJob: (state, action) => {
+            const index = state.user.jobs.findIndex((job) => job.id === Number(action.payload.job_id))
+            const applicant = state.user.applicants.find(applicant => applicant.id === action.payload.applicant_id)
+            state.user.jobs[index].applicants.push(applicant)
+        },
     },
 })
 
-export const { toggleAccount, userAdded, jobAdded, applicantAdded, listAdded, listRemoved, applicantRemoved, jobRemoved, listEdited, jobEdited, applicantEdited, applicantAddedToList, listAddedToApplicant, statusChanged, noteAdded, noteEdited, applicantRemovedFromList, listRemovedFromApplicant, toDoAdded, toDoRemoved } = slice.actions
+export const { toggleAccount, userAdded, jobAdded, applicantAdded, listAdded, listRemoved, applicantRemoved, jobRemoved, listEdited, jobEdited, applicantEdited, applicantAddedToList, listAddedToApplicant, statusChanged, noteAdded, noteEdited, applicantRemovedFromList, listRemovedFromApplicant, toDoAdded, toDoRemoved, applicantRemovedFromJob, applicantAddedToJob } = slice.actions
 
 export default slice.reducer

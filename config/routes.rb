@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   patch "/add_applicant_to_list", to: "lists#addApplicantToList"
   patch "/remove_applicant_from_list", to: "lists#removeApplicantFromList"
+  patch "/add_applicant_to_job", to: "jobs#addApplicantToJob"
+  patch "/remove_applicant_from_job", to: "jobs#removeApplicantFromJob"
 end
