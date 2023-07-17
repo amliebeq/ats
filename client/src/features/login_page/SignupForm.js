@@ -62,7 +62,7 @@ const SignupForm = () => {
             <label>Confirm Password</label>
             <input type='Password' onChange={handleConfirmation} value={confirmation} />
             {errors.length === 0 ? null : errors.map(error => <p className='error'>{error}</p>)} 
-            <button>Submit</button>
+            <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">Submit</button>
         </form>
     )
 }

@@ -44,8 +44,8 @@ export const ApplicantStatus = ({ applicant }) => {
                 <option value='Third Client Interview'>Third Client Interview</option>
                 <option value='Placed'>Placed</option>
             </select>
-            <button type='submit'>Submit</button>
-            <button onClick={onStatusClick}>Cancel</button>
+            <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" type='submit'>Submit</button>
+            <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" onClick={onStatusClick}>Cancel</button>
         </form>
             )
         }

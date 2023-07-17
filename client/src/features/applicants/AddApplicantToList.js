@@ -33,7 +33,7 @@ export const AddApplicantToList = ({ applicant, setShowCandidatelistForm }) => {
                 <option value='Select a list below'>'Select a list below'</option>
                 {lists.map((list) => <option key={list.id} value={list.id}>{list.name}</option>)}
             </select>
-            <button>Submit</button>
+            <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">Submit</button>
         </form>
     )
 }

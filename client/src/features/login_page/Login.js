@@ -17,12 +17,12 @@ const Login = () => {
             {login ? (
                 <div id='loginForm'>
                     <LoginForm />
-                    <button id='loginButton' onClick={handleClick}>Don't have an account?</button>
+                    <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" id='loginButton' onClick={handleClick}>Don't have an account?</button>
                 </div>
             ) : (
                 <div>
                     <SignupForm />
-                    <button id='signupButton' onClick={handleClick}>Already have an account?</button>
+                    <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" id='signupButton' onClick={handleClick}>Already have an account?</button>
                 </div>
             )}
         </div>

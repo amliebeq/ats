@@ -87,10 +87,17 @@ const slice = createSlice({
             const applicantIndex = state.user.applicants.findIndex(applicant => applicant.id === action.payload.applicant_id)
             const listIndex = state.user.applicants[applicantIndex].lists.findIndex(list => list.id === action.payload.list_id)
             state.user.applicants[applicantIndex].lists.splice(listIndex, 1)
-        }
+        },
+        toDoAdded : (state, action) => {
+            state.user.to_dos.push(action.payload)
+        },
+        toDoRemoved: (state, action) => {
+            const index = state.user.to_dos.findIndex((item) => item.id === action.payload)
+            state.user.to_dos.splice(index, 1)
+        },
     },
 })
 
-export const { toggleAccount, userAdded, jobAdded, applicantAdded, listAdded, listRemoved, applicantRemoved, jobRemoved, listEdited, jobEdited, applicantEdited, applicantAddedToList, listAddedToApplicant, statusChanged, noteAdded, noteEdited, applicantRemovedFromList, listRemovedFromApplicant } = slice.actions
+export const { toggleAccount, userAdded, jobAdded, applicantAdded, listAdded, listRemoved, applicantRemoved, jobRemoved, listEdited, jobEdited, applicantEdited, applicantAddedToList, listAddedToApplicant, statusChanged, noteAdded, noteEdited, applicantRemovedFromList, listRemovedFromApplicant, toDoAdded, toDoRemoved } = slice.actions
 
 export default slice.reducer

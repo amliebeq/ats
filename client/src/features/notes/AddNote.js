@@ -42,14 +42,14 @@ export const AddNote = ({ applicant }) => {
                     <form onSubmit={handleNoteSubmitClick}>
                         <textarea onChange={onNoteChange} value={newNote}/>
                         {errors.length === 0 ? null : errors.map(error => <p key={error}>{error}</p>)}
-                        <button onClick={onToggleClick}>Cancel</button>
-                        <button type='Submit'>Submit</button>
+                        <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" onClick={onToggleClick}>Cancel</button>
+                        <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" type='Submit'>Submit</button>
                     </form>
                 </div>
             )
         }
         else {
-            return <button onClick={onToggleClick}>Add a Note</button>
+            return <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" onClick={onToggleClick}>Add a Note</button>
         }
     }
 

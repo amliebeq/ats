@@ -10,6 +10,7 @@ import { JobsList } from "./features/Jobs/JobList";
 import { ListList } from "./features/lists/ListList";
 import { ApplicantDetail } from "./features/applicants/ApplicantDetail";
 import { ListDetail } from "./features/lists/ListDetail";
+import { HomePage } from "./features/home/HomePage";
 
 function App() {
   const dispatch = useDispatch()
@@ -32,6 +33,9 @@ function App() {
       <SideBar />
       <div className="flex flex-col">
         <Switch>
+        <Route exact path = '/'>
+            <HomePage />
+          </Route>
           <Route exact path = '/applicants'>
             <ApplicantList />
           </Route>

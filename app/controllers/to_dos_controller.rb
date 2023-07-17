@@ -9,7 +9,7 @@ class ToDosController < ApplicationController
     end
 
     def update
-        user = User.find_by(id: session[:id])
+        user = User.find_by(id: session[:user_id])
         item = user.to_dos.find_by(id: params[:id])
         if item.update(item_params)
             render json: item, status: :created
@@ -19,7 +19,7 @@ class ToDosController < ApplicationController
     end
 
     def destroy
-        user = User.find_by(id: session[:id])
+        user = User.find_by(id: session[:user_id])
         item = user.to_dos.find_by(id: params[:id])
         if item.destroy
             render json: item
