@@ -5,4 +5,5 @@ class UserSerializer < ActiveModel::Serializer
   has_many :jobs
   has_many :lists
   has_many :notes
+  has_many :to_dos
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :to_dos, only: [:create, :update, :destroy]
   resources :jobs, only: [:create, :update, :destroy, :index]
   resources :lists, only: [:create, :update, :destroy, :index]
   resources :notes, only: [:create, :update, :destroy]
@@ -10,4 +11,5 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   patch "/add_applicant_to_list", to: "lists#addApplicantToList"
+  patch "/remove_applicant_from_list", to: "lists#removeApplicantFromList"
 end

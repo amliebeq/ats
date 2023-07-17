@@ -5,6 +5,7 @@ class User < ApplicationRecord
     has_many :applicants
     has_many :jobs
     has_many :lists
+    has_many :to_dos
 
     validates :username, presence: true, uniqueness: true
     validates :first_name, presence: true

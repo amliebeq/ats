@@ -9,6 +9,7 @@ import './App.css'
 import { JobsList } from "./features/Jobs/JobList";
 import { ListList } from "./features/lists/ListList";
 import { ApplicantDetail } from "./features/applicants/ApplicantDetail";
+import { ListDetail } from "./features/lists/ListDetail";
 
 function App() {
   const dispatch = useDispatch()
@@ -42,6 +43,9 @@ function App() {
           </Route>
           <Route exact path = '/lists'>
             <ListList />
+          </Route>
+          <Route exact path = '/lists/:id'>
+            <ListDetail />
           </Route>
         </Switch>
       </div>

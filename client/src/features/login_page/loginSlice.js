@@ -47,8 +47,6 @@ const slice = createSlice({
         },
         applicantEdited: (state, action) => {
             const index = state.user.applicants.findIndex((applicant) => applicant.id === action.payload.id)
-            console.log(action.payload)
-            console.log(state.user.applicants[index])
             state.user.applicants[index].city = action.payload.city
             state.user.applicants[index].email = action.payload.email
             state.user.applicants[index].first_name = action.payload.first_name
@@ -66,10 +64,33 @@ const slice = createSlice({
             const index = state.user.applicants.findIndex((applicant) => applicant.id === Number(action.payload.applicant_id))
             const list = state.user.lists.find(list => list.id === action.payload.list_id)
             state.user.applicants[index].lists.push(list)
+        },
+        statusChanged: (state, action) => {
+            const index = state.user.applicants.findIndex((applicant) => applicant.id === action.payload.id)
+            state.user.applicants[index].status = action.payload.status
+        },
+        noteAdded: (state,action) => {
+            const index = state.user.applicants.findIndex((applicant) => applicant.id === Number(action.payload.applicant_id))
+            state.user.applicants[index].notes.push(action.payload)
+        },
+        noteEdited: (state, action) => {
+            const noteIndex = state.user.notes.findIndex((note) => note.id === action.payload.id)
+            const applicantIndex = state.user.applicants.findIndex((applicant) => applicant.id === action.payload.applicant_id)
+            state.user.applicants[applicantIndex].notes[noteIndex].body = action.payload.body
+        },
+        applicantRemovedFromList: (state, action) => {
+            const listIndex = state.user.lists.findIndex(list => list.id === action.payload.list_id)
+            const applicantIndex = state.user.lists[listIndex].applicants.findIndex(applicant => applicant.id === action.payload.applicant_id)
+            state.user.lists[listIndex].applicants.splice(applicantIndex, 1)
+        },
+        listRemovedFromApplicant: (state, action) => {
+            const applicantIndex = state.user.applicants.findIndex(applicant => applicant.id === action.payload.applicant_id)
+            const listIndex = state.user.applicants[applicantIndex].lists.findIndex(list => list.id === action.payload.list_id)
+            state.user.applicants[applicantIndex].lists.splice(listIndex, 1)
         }
     },
 })
 
-export const { toggleAccount, userAdded, jobAdded, applicantAdded, listAdded, listRemoved, applicantRemoved, jobRemoved, listEdited, jobEdited, applicantEdited, applicantAddedToList, listAddedToApplicant } = slice.actions
+export const { toggleAccount, userAdded, jobAdded, applicantAdded, listAdded, listRemoved, applicantRemoved, jobRemoved, listEdited, jobEdited, applicantEdited, applicantAddedToList, listAddedToApplicant, statusChanged, noteAdded, noteEdited, applicantRemovedFromList, listRemovedFromApplicant } = slice.actions
 
 export default slice.reducer

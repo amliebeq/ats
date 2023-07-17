@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { DeleteApplicant } from './DeleteApplicant';
 import { EditApplicant } from './EditApplicant';
 import { AddApplicantToList } from './AddApplicantToList';
+import { ApplicantStatus } from './ApplicantStatus';
 
 export const Applicant = ({ applicant }) => {
     const [showEdit, setShowEdit] = useState(false)
@@ -19,6 +20,7 @@ export const Applicant = ({ applicant }) => {
         <li>Position: {applicant.position}</li>
         <li>City: {applicant.city}</li>
         <li>State: {applicant.state}</li>
+        <ApplicantStatus applicant={applicant} />
         <li>Lists:</li>
         <ul>{lists}</ul>
     </ul>

@@ -36,6 +36,6 @@ class ApplicantsController < ApplicationController
     private
 
     def applicant_params
-        params.permit(:first_name, :last_name, :position, :email, :phone, :city, :state, :user_id)
+        params.permit(:first_name, :last_name, :position, :email, :phone, :city, :state, :user_id, :status)
     end
 end

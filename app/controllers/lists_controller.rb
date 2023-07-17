@@ -43,6 +43,16 @@ class ListsController < ApplicationController
         end
     end
 
+    def removeApplicantFromList
+        applicant = Applicant.find_by(id: params[:applicant_id])
+        list = List.find_by(id: params[:list_id])
+        if applicant.lists.delete(list)
+            render json: list, status: :ok
+        else
+            render json: { errors: list.errors.full_messages }, status: :unprocessable_entity
+        end
+    end
+
     private
     def list_params
         params.permit(:name, :user_id, :applicant_id)

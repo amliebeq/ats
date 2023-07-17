@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_10_183252) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_17_150405) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,6 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_10_183252) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "job_id"
+    t.string "status", default: "New"
   end
 
   create_table "applicants_lists", id: false, force: :cascade do |t|
@@ -96,6 +97,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_10_183252) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["applicant_id"], name: "index_resumes_on_applicant_id"
+  end
+
+  create_table "to_dos", force: :cascade do |t|
+    t.string "item"
+    t.boolean "completed"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
