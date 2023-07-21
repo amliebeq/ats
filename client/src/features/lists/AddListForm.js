@@ -52,9 +52,9 @@ export const AddListForm = () => {
     }
 
     return (
-        <div>
+        <div className='pb-4'>
             {renderListForm()}
-            <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600' onClick={handleVisibleClick} >{formVisible ? "cancel" : "Create A New List"}</button>
+            <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600' onClick={handleVisibleClick} >{formVisible ? "Cancel" : "Create A New List"}</button>
         </div>
     )
 }

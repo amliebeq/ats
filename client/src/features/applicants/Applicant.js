@@ -4,6 +4,7 @@ import { EditApplicant } from './EditApplicant';
 import { AddApplicantToList } from './AddApplicantToList';
 import { ApplicantStatus } from './ApplicantStatus';
 import { AddApplicantToJob } from './AddApplicantToJob';
+import { Link } from 'react-router-dom';
 
 export const Applicant = ({ applicant }) => {
     const [showEdit, setShowEdit] = useState(false)
@@ -16,7 +17,7 @@ export const Applicant = ({ applicant }) => {
 
     const applicantCard =
     <div className='break-all'>
-        <a className='text-blue-500 hover:bg-gray-100' href={`/applicants/${applicant.id}`} target="_blank" rel="noopener noreferrer">{applicant.first_name} {applicant.last_name}</a>
+        <Link className='text-blue-500 hover:bg-gray-100' to={`/applicants/${applicant.id}`} target="_blank" rel="noopener noreferrer">{applicant.first_name} {applicant.last_name}</Link>
         <ul>
             <li>{applicant.email}</li>
             <li>Phone Number: {applicant.phone}</li>

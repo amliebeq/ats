@@ -7,8 +7,9 @@ export const Notes = ({ applicant }) => {
 
     return (
         <div>
+            <h1>Notes</h1>
             <AddNote applicant={applicant}/>
-            {notes}
+            {notes.length > 0 ? notes : <p>No notes yet</p>}
         </div>
     )
 

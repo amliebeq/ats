@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export const ApplicantActionRequired = () => {
     const applicants = useSelector(state => state.login.user.applicants)
@@ -9,7 +10,7 @@ export const ApplicantActionRequired = () => {
     const renderApplicants = newApplicantList.map((applicant) => {
         return (
             <div>
-                <a key={applicant.id} href={`/applicants/${applicant.id}`} target="_blank" rel="noopener noreferrer" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">{applicant.first_name} {applicant.last_name}</a>
+                <Link key={applicant.id} to={`/applicants/${applicant.id}`} target="_blank" rel="noopener noreferrer" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">{applicant.first_name} {applicant.last_name}</Link>
             </div>
     )})
     

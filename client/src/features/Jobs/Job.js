@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { DeleteJob } from './DeleteJob';
 import { EditJob } from './EditJob';
 import { RemoveApplicantFromJob } from './RemoveApplicantFromJob';
+import { Link } from 'react-router-dom';
 
 export const Job = ({ job }) => {
     const [formVisible, setFormVisible] = useState(false)
@@ -20,7 +21,7 @@ export const Job = ({ job }) => {
             {job.applicants.map((applicant) => {
                 return (
                 <div className='flex flex-wrap'>
-                    <a href={`/applicants/${applicant.id}`} target="_blank" rel="noopener noreferrer" className='text-blue-500 hover:bg-gray-100'>{applicant.first_name} {applicant.last_name}</a>
+                    <Link to={`/applicants/${applicant.id}`} target="_blank" rel="noopener noreferrer" className='text-blue-500 hover:bg-gray-100'>{applicant.first_name} {applicant.last_name}</Link>
                     <RemoveApplicantFromJob job={job} applicant={applicant} />
                 </div>
             )})}

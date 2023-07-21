@@ -76,7 +76,7 @@ export const AddJobForm = () => {
     }
 
     return (
-        <div>
+        <div className='pb-4'>
             {showForm()}
             <button button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600' onClick={onVisibleClick} >{jobFormVisible ? 'Cancel' : 'Add a New Job'}</button>
         </div>

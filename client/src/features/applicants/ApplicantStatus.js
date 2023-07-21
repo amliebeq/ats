@@ -27,7 +27,7 @@ export const ApplicantStatus = ({ applicant }) => {
 
     const showStatusForm = () => {
         if (statusChangeVisible === false) {
-            return <li className='text-blue-500 hover:bg-gray-100 hover:cursor-pointer' onClick={onStatusClick}>Status: {applicant.status}</li>
+            return <p className="font-medium text-blue-600 dark:text-blue-500 hover:underline hover:cursor-pointer" onClick={onStatusClick}>Status: {applicant.status}</p>
         }
         else {
             return(
@@ -45,7 +45,7 @@ export const ApplicantStatus = ({ applicant }) => {
             </select>
             <div className='flex flex-wrap'>
                 <button className='block w-1/2 p-3 text-center text-white duration-300 bg-blue-700 rounded-sm hover:bg-blue-500' type='submit'>Submit</button>
-                <button className='block w-1/2 p-3 text-center text-white duration-300 bg-blue-700 rounded-sm hover:bg-blue-500' onClick={onStatusClick}>Cancel</button>
+                <button className='block w-1/2 p-3 text-center text-white duration-300 bg-red-700 rounded-sm hover:bg-red-500' onClick={onStatusClick}>Cancel</button>
             </div>
         </form>
             )
