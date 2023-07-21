@@ -7,12 +7,12 @@ export const ListDetail = () => {
     const { id } = useParams()
     const list = useSelector(state => state.login.user.lists.find(list => list.id == id))
 
-    const listApplicantCreation = () => list.applicants.map(applicant => <ListApplicant list={list} applicant={applicant} key={applicant.id} />)
+    const listApplicantCreation = list.applicants.map(applicant => <ListApplicant list={list} applicant={applicant} key={applicant.id} />)
 
     return (
-        <div>
-            <h1>{list.name}</h1>
-            {listApplicantCreation()}
-        </div>  
+        <div className="p-4 mb-4 mr-4 bg-white border rounded-lg shadow-md">
+            <h1 className='pb-4 text-2xl'>{list.name}</h1>
+            {list.applicants.length > 0 ? listApplicantCreation : <p>No candidates so far</p>}
+        </div>
     )
 }

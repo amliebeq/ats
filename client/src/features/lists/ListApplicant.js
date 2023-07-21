@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 
 export const ListApplicant = ({ applicant, list }) => {
     return (
-        <div>
-            <Link to={`/applicants/${applicant.id}`} target="_blank" rel="noopener noreferrer">{applicant.first_name} {applicant.last_name}</Link>
+        <div className='flex flex-wrap'>
+            <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline" to={`/applicants/${applicant.id}`} target="_blank" rel="noopener noreferrer">{applicant.first_name} {applicant.last_name}</Link>
+            <p className='pl-8'>{applicant.phone}</p>
+            <p className='pl-8'>{applicant.email}</p>
             <RemoveApplicant list={list} applicant={applicant}/>
         </div>
     )
