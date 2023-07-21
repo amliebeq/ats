@@ -15,7 +15,7 @@ export const ApplicantActionRequired = () => {
     )})
     
     return (
-        <div className="p-4 mb-4 mr-4 bg-white border rounded-lg shadow-md">
+        <div className="p-4 mb-4 mr-4 bg-gray-100 border rounded-lg shadow-md">
             <p className='text-lg font-bold'>Candidate Action Required</p>
             {newApplicantList.length > 0 ? renderApplicants : <p>No new candidates</p>}
         </div>

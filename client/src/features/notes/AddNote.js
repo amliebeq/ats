@@ -43,15 +43,15 @@ export const AddNote = ({ applicant }) => {
                         <textarea className="w-full px-3 py-2 mb-2 border rounded-lg" onChange={onNoteChange} value={newNote}/>
                         {errors.length === 0 ? null : errors.map(error => <p key={error}>{error}</p>)}
                         <div className='flex flex-wrap'>
-                            <button className='block w-1/2 p-3 text-center text-white duration-300 bg-red-700 rounded-sm hover:bg-red-500' onClick={onToggleClick}>Cancel</button>
-                            <button className='block w-1/2 p-3 text-center text-white duration-300 bg-blue-700 rounded-sm hover:bg-blue-500' type='Submit'>Submit</button>
+                            <button className='block w-full p-3 text-center text-white duration-300 bg-indigo-500 rounded-lg hover:bg-indigo-600' type='Submit'>Submit</button>
+                            <button className='block w-full p-3 text-center text-white duration-300 bg-orange-400 rounded-lg hover:bg-orange-500' onClick={onToggleClick}>Cancel</button>
                         </div>
                     </form>
                 </div>
             )
         }
         else {
-            return <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600' onClick={onToggleClick}>Add a Note</button>
+            return <button className='block w-full p-3 text-center text-white duration-300 bg-teal-500 rounded-lg hover:bg-teal-600' onClick={onToggleClick}>Add a Note</button>
         }
     }
 

@@ -17,7 +17,7 @@ export const RemoveApplicantFromJob = ({ job, applicant }) => {
     }
     return (
         <div className='px-4'>
-            <button className='block w-8 h-8 text-center text-white duration-300 bg-red-700 rounded-sm hover:bg-red-500' onClick={handleRemoveClick}>-</button>
+            <button className='block w-8 h-8 text-center text-white duration-300 bg-orange-400 rounded-sm hover:bg-orange-500' onClick={handleRemoveClick}>-</button>
         </div>
     )
 }

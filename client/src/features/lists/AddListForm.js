@@ -41,20 +41,22 @@ export const AddListForm = () => {
     const renderListForm = () => {
         if (formVisible) {
             return (
-                <form onSubmit={handleListSubmit}>
+                <form className='p-4 bg-gray-100' onSubmit={handleListSubmit}>
                     <label className="block mb-2 font-bold">New List Name</label>
                     <input className="w-full px-3 py-2 mb-2 border rounded-lg" type='text' value={name} onChange={onListChange} />
                     {errors.length === 0 ? null : errors.map(error => <p key={error}>{error}</p>)}     
-                    <button className='block w-full p-3 text-center text-white duration-300 bg-blue-700 rounded-sm hover:bg-blue-500' type='submit' >Submit</button>                       
+                    <button className='block w-full p-3 text-center text-white duration-300 bg-indigo-500 rounded-lg hover:bg-indigo-600' type='submit' >Submit</button>                       
                 </form>
             )
         }
     }
 
     return (
-        <div className='pb-4'>
+        <div>
             {renderListForm()}
-            <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600' onClick={handleVisibleClick} >{formVisible ? "Cancel" : "Create A New List"}</button>
+            <div className='pb-4'>
+                <button className='block w-full p-3 text-center text-white duration-300 bg-teal-500 rounded-lg hover:bg-teal-600' onClick={handleVisibleClick} >{formVisible ? "Cancel" : "Create A New List"}</button>
+            </div>
         </div>
     )
 }

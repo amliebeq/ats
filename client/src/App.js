@@ -26,10 +26,10 @@ function App() {
     })
   }, [dispatch])
 
-  if (!user) return (<div className="h-screen pt-4 bg-purple-100"><Login /></div>)
+  if (!user) return (<div className="h-screen pt-4 bg-gradient-to-r from-yellow-200 via-green-200 to-green-500"><Login /></div>)
 
   return (
-    <div className="flex gap-6 bg-purple-100 h-max">
+    <div className="flex gap-6 bg-white h-max">
       <SideBar />
       <div className="flex-grow w-11/12">
         <Switch>

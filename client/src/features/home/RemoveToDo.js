@@ -14,6 +14,6 @@ export const RemoveToDo = ({ toDo }) => {
     }
 
     return (
-        <button className='block w-8 h-8 text-center text-white duration-300 bg-red-700 rounded-sm hover:bg-red-500' onClick={handleToDoRemoveClick}>-</button>
+        <button className='block w-8 h-8 text-center text-white duration-300 bg-orange-400 rounded-sm hover:bg-orange-500' onClick={handleToDoRemoveClick}>-</button>
     )
 }

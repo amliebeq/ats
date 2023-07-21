@@ -10,7 +10,7 @@ export const ListDetail = () => {
     const listApplicantCreation = list.applicants.map(applicant => <ListApplicant list={list} applicant={applicant} key={applicant.id} />)
 
     return (
-        <div className="p-4 mb-4 mr-4 bg-white border rounded-lg shadow-md">
+        <div className="p-4 mb-4 mr-4 bg-gray-100 border rounded-lg shadow-md">
             <h1 className='pb-4 text-2xl'>{list.name}</h1>
             {list.applicants.length > 0 ? listApplicantCreation : <p>No candidates so far</p>}
         </div>

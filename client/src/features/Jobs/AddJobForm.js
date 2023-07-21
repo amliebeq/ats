@@ -57,7 +57,7 @@ export const AddJobForm = () => {
     const showForm = () => { 
         if (jobFormVisible) {
             return(
-            <form onSubmit={handleNewJobClick}>
+            <form className='p-4 bg-gray-100' onSubmit={handleNewJobClick}>
                 <label className="block mb-2 font-bold">Job Title</label>
                 <input className="w-full px-3 py-2 mb-2 border rounded-lg" type='text' value={title} onChange={handleTitleChange} />
                 <label className="block mb-2 font-bold">Company</label>
@@ -69,7 +69,7 @@ export const AddJobForm = () => {
                 <label className="block mb-2 font-bold">Job Description</label>
                 <textarea className="w-full px-3 py-2 mb-2 border rounded-lg" type='text' value={description} onChange={handleDescriptionChange} />
                 {errors.length === 0 ? null : errors.map(error => <p key={error}>{error}</p>)}     
-                <button className='block w-full p-3 text-center text-white duration-300 bg-blue-700 rounded-sm hover:bg-blue-500' type='submit' >Submit</button>            
+                <button className='block w-full p-3 text-center text-white duration-300 bg-indigo-500 rounded-lg hover:bg-indigo-600' type='submit' >Submit</button>            
             </form>
             )
         }
@@ -78,7 +78,7 @@ export const AddJobForm = () => {
     return (
         <div className='pb-4'>
             {showForm()}
-            <button button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600' onClick={onVisibleClick} >{jobFormVisible ? 'Cancel' : 'Add a New Job'}</button>
+            <button button className='block w-full p-3 text-center text-white duration-300 bg-teal-500 rounded-lg hover:bg-teal-600' onClick={onVisibleClick} >{jobFormVisible ? 'Cancel' : 'Add a New Job'}</button>
         </div>
     )
 }

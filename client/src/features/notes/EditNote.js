@@ -24,9 +24,9 @@ export const EditNote = ({ note, setEdit }) => {
     }
 
     return(
-        <form onSubmit={handleNoteSubmitClick}>
+        <form className='bg-gray-200' onSubmit={handleNoteSubmitClick}>
             <textarea className="w-full px-3 py-2 mb-2 border rounded-lg" onChange={onNoteChange} value={editNoteField} />
-            <button className='block w-full p-3 text-center text-white duration-300 bg-blue-700 rounded-sm hover:bg-blue-500' type='Submit' >Submit</button>
+            <button className='block w-full p-3 text-center text-white duration-300 bg-indigo-500 rounded-lg hover:bg-indigo-600' type='Submit' >Submit</button>
         </form>
     )
 }

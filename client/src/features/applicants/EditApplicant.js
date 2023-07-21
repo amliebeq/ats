@@ -51,7 +51,7 @@ export const EditApplicant = ({ setShowEdit, applicant }) => {
             <input className="w-full px-3 py-2 mb-2 border rounded-lg" value={city} onChange={onCityChange} />
             <label className="block mb-2 font-bold">State:</label>
             <input className="w-full px-3 py-2 mb-2 border rounded-lg" value={state} onChange={onStateChange} />
-            <button className='block w-full p-3 text-center text-white duration-300 bg-blue-700 rounded-sm hover:bg-blue-500'>Submit</button>
+            <button className='block w-full p-3 text-center text-white duration-300 bg-indigo-500 rounded-lg hover:bg-indigo-600'>Submit</button>
         </form>
     )
 }

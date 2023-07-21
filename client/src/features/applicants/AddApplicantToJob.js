@@ -32,7 +32,7 @@ export const AddApplicantToJob = ({ applicant, setShowCandidateJobForm }) => {
                 <option value='Select a job below'>'Select a job below'</option>
                 {jobs.map((job) => <option key={job.id} value={job.id}>{job.title}</option>)}
             </select>
-            <button className='block w-full p-3 text-center text-white duration-300 bg-blue-700 rounded-sm hover:bg-blue-500'>Submit</button>
+            <button className='block w-full p-3 text-center text-white duration-300 bg-indigo-500 rounded-lg hover:bg-indigo-600'>Submit</button>
         </form>
     )
 }

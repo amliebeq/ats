@@ -11,11 +11,11 @@ export const ToDoList = () => {
     const handleShowFormClick = () => setShowForm(!showForm)
 
     return(
-        <div className="p-4 mb-4 mr-4 bg-white border rounded-lg shadow-md">
+        <div className="p-4 mb-4 mr-4 bg-gray-100 border rounded-lg shadow-md">
             <p className='text-lg font-bold'>To-Do List</p>
             {createToDoList()}
             {showForm ? <AddToDo setShowForm={setShowForm} /> : null}
-            <button className='block w-8 h-8 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600' onClick={handleShowFormClick} >{showForm ? '-' : '+'}</button>
+            <button className='block w-8 h-8 text-center text-white duration-300 bg-teal-400 rounded-sm hover:bg-teal-500' onClick={handleShowFormClick} >{showForm ? '-' : '+'}</button>
         </div>
     )
 }

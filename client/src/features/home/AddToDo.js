@@ -36,7 +36,7 @@ const handleNewToDoSubmitClick = (e) => {
         <form className='flex flex-wrap' onSubmit={handleNewToDoSubmitClick}>
             <label className="block pr-4 mb-2 font-semibold">New To Do Item</label>
             <input className="w-3/4 h-8 px-3 py-2 mb-2 border rounded-lg" type='text' value={newToDo} onChange={onNewToDoChange} />
-            <button className='block w-1/12 h-8 text-white duration-300 bg-blue-700 rounded-sm hover:bg-blue-500' type='submit'>Submit</button>
+            <button className='block w-1/12 h-8 text-center text-white duration-300 bg-indigo-500 rounded-lg hover:bg-indigo-600' type='submit'>Submit</button>
         </form>
     )
 }

@@ -65,7 +65,7 @@ export const AddApplicantForm = () => {
     const showForm = () => { 
         if (applicantFormVisible) {
             return(
-            <form className="p-4 mb-4 bg-white rounded-lg shadow-md" onSubmit={handleNewApplicantClick}>
+            <form className="p-4 mb-4 bg-gray-100 rounded-lg shadow-md" onSubmit={handleNewApplicantClick}>
                 <label className="block mb-2 font-bold">FirstName</label>
                 <input className="w-full px-3 py-2 mb-2 border rounded-lg" type='text' value={firstName} onChange={handleFirstNameChange} /> 
                 <label className="block mb-2 font-bold">Last Name</label>
@@ -82,7 +82,7 @@ export const AddApplicantForm = () => {
                 <input className="w-full px-3 py-2 mb-2 border rounded-lg" type='text' value={position} onChange={handlePositionChange} />
                 {errors.length === 0 ? null : errors.map(error => <p className='text-lg text-center text-red-600' key={error}>{error}</p>)}
                 <div className='px-20'>    
-                    <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600' type='submit'>Submit</button>
+                    <button className='block w-full p-3 text-center text-white duration-300 bg-indigo-500 rounded-lg hover:bg-indigo-600' type='submit'>Submit</button>
                 </div>             
             </form>
             )
@@ -94,8 +94,8 @@ export const AddApplicantForm = () => {
             <div className='px-10'>
                 {showForm()}
             </div>
-            <div className='w-full px-36'>
-                <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600 ' onClick={onVisibleClick} >{applicantFormVisible ? 'Cancel' : 'Add a New Candidate'}</button>
+            <div className='w-full px-32'>
+                <button className='block w-full p-3 text-center text-white duration-300 bg-teal-500 rounded-lg hover:bg-teal-600' onClick={onVisibleClick} >{applicantFormVisible ? 'Cancel' : 'Add a New Candidate'}</button>
             </div>
         </div>
     )

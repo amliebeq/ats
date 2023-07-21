@@ -46,7 +46,7 @@ export const ApplicantStageGraph = () => {
       ];
     
       return (
-        <div className="p-4 mb-4 mr-4 bg-white border rounded-lg shadow-md"> 
+        <div className="p-4 mb-4 mr-4 bg-gray-100 border rounded-lg shadow-md"> 
             <p className='pb-2 text-lg font-bold'>Candidates By Stage</p>
             <ResponsiveContainer width='100%' height={200}>
                 <BarChart
@@ -64,7 +64,7 @@ export const ApplicantStageGraph = () => {
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip />
-                    <Bar dataKey="Applicant Count" fill="#82ca9d" />
+                    <Bar dataKey="Applicant Count" fill="#3F51B5" />
                 </BarChart>
             </ResponsiveContainer>
         </div>

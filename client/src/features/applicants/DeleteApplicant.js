@@ -15,6 +15,6 @@ export const DeleteApplicant = ({ applicant }) => {
     }
 
     return (
-        <button  className='block w-full p-3 text-center text-white duration-300 bg-red-800 rounded-sm hover:bg-red-600'  onClick={handleDeleteClick}>Delete</button>
+        <button  className='block w-full p-3 text-center text-white duration-300 bg-orange-400 rounded-lg hover:bg-orange-500'  onClick={handleDeleteClick}>Delete</button>
     )
 }

@@ -17,7 +17,7 @@ export const Applicant = ({ applicant }) => {
 
     const applicantCard =
     <div className='break-all'>
-        <Link className='text-blue-500 hover:bg-gray-100' to={`/applicants/${applicant.id}`} target="_blank" rel="noopener noreferrer">{applicant.first_name} {applicant.last_name}</Link>
+        <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline hover:cursor-pointer" to={`/applicants/${applicant.id}`} target="_blank" rel="noopener noreferrer">{applicant.first_name} {applicant.last_name}</Link>
         <ul>
             <li>{applicant.email}</li>
             <li>Phone Number: {applicant.phone}</li>
@@ -29,13 +29,13 @@ export const Applicant = ({ applicant }) => {
     </div>
 
     return (
-        <div className="p-4 mb-4 text-center transition duration-200 transform bg-white border rounded-lg shadow-md hover:scale-105">
+        <div className="p-4 mb-4 text-center transition duration-200 transform bg-gray-100 border rounded-lg shadow-md hover:scale-105">
             {showEdit ? <EditApplicant applicant={applicant} setShowEdit={setShowEdit} /> : applicantCard}
             {showCandidateListForm ? <AddApplicantToList applicant={applicant} setShowCandidateListForm={setShowCandidateListForm} /> : null}
-            <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600' onClick={onAddToListClick}>{showCandidateListForm ? 'Cancel' : 'Add to a list'}</button>
+            <button className='block w-full p-3 text-center text-white duration-300 bg-teal-500 rounded-lg hover:bg-teal-600' onClick={onAddToListClick}>{showCandidateListForm ? 'Cancel' : 'Add to a list'}</button>
             {showCandidateJobForm ? <AddApplicantToJob applicant={applicant} setShowCandidateJobForm={setShowCandidateJobForm} /> : null}
-            <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600' onClick={onAddToJobClick}>{showCandidateJobForm ? 'Cancel' : 'Add to Job'}</button>
-            <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600' onClick={onEditClick}>{showEdit ? `Cancel` : `Edit`}</button>
+            <button className='block w-full p-3 text-center text-white duration-300 bg-teal-500 rounded-lg hover:bg-teal-600' onClick={onAddToJobClick}>{showCandidateJobForm ? 'Cancel' : 'Add to Job'}</button>
+            <button className='block w-full p-3 text-center text-white duration-300 bg-teal-500 rounded-lg hover:bg-teal-600' onClick={onEditClick}>{showEdit ? `Cancel` : `Edit`}</button>
             <DeleteApplicant applicant={applicant} />
             </div>
     )

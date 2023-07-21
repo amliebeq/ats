@@ -44,8 +44,8 @@ export const ApplicantStatus = ({ applicant }) => {
                 <option value='Placed'>Placed</option>
             </select>
             <div className='flex flex-wrap'>
-                <button className='block w-1/2 p-3 text-center text-white duration-300 bg-blue-700 rounded-sm hover:bg-blue-500' type='submit'>Submit</button>
-                <button className='block w-1/2 p-3 text-center text-white duration-300 bg-red-700 rounded-sm hover:bg-red-500' onClick={onStatusClick}>Cancel</button>
+                <button className='block w-1/2 p-3 text-center text-white duration-300 bg-indigo-500 rounded-lg hover:bg-indigo-600' type='submit'>Submit</button>
+                <button className='block w-1/2 p-3 text-center text-white duration-300 bg-orange-400 rounded-lg hover:bg-orange-500' onClick={onStatusClick}>Cancel</button>
             </div>
         </form>
             )

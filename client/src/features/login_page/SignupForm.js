@@ -48,21 +48,21 @@ const SignupForm = () => {
     const handleTitle = (e) => setTitle(e.target.value)
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className='bg-gray-100' onSubmit={handleSubmit}>
             <label className='font-bold blocktext-sm text-grey-darker'>First Name</label>
-            <input className='w-full px-4 py-3 mb-3 bg-green-100 rounded-sm focus:outline-none' type='text' onChange={handleFirstName} value={firstName} />
+            <input className='w-full px-4 py-3 mb-3 bg-white rounded-sm focus:outline-none' type='text' onChange={handleFirstName} value={firstName} />
             <label className='font-bold blocktext-sm text-grey-darker'>Last Name</label>
-            <input className='w-full px-4 py-3 mb-3 bg-green-100 rounded-sm focus:outline-none' type='text' onChange={handleLastName} value={lastName} />
+            <input className='w-full px-4 py-3 mb-3 bg-white rounded-sm focus:outline-none' type='text' onChange={handleLastName} value={lastName} />
             <label className='font-bold blocktext-sm text-grey-darker'>Job Title</label>
-            <input className='w-full px-4 py-3 mb-3 bg-green-100 rounded-sm focus:outline-none' type='text' onChange={handleTitle} value={title} />     
+            <input className='w-full px-4 py-3 mb-3 bg-white rounded-sm focus:outline-none' type='text' onChange={handleTitle} value={title} />     
             <label className='font-bold blocktext-sm text-grey-darker'>Username</label>
-            <input className='w-full px-4 py-3 mb-3 bg-green-100 rounded-sm focus:outline-none' type='Text' onChange={handleUsername} value={username} />
+            <input className='w-full px-4 py-3 mb-3 bg-white rounded-sm focus:outline-none' type='Text' onChange={handleUsername} value={username} />
             <label className='font-bold blocktext-sm text-grey-darker'>Password</label>
-            <input className='w-full px-4 py-3 mb-3 bg-green-100 rounded-sm focus:outline-none' type='Password' onChange={handlePassword} value={password} />
+            <input className='w-full px-4 py-3 mb-3 bg-white rounded-sm focus:outline-none' type='Password' onChange={handlePassword} value={password} />
             <label className='font-bold blocktext-sm text-grey-darker'>Confirm Password</label>
-            <input className='w-full px-4 py-3 mb-3 bg-green-100 rounded-sm focus:outline-none' type='Password' onChange={handleConfirmation} value={confirmation} />
+            <input className='w-full px-4 py-3 mb-3 bg-white rounded-sm focus:outline-none' type='Password' onChange={handleConfirmation} value={confirmation} />
             {errors.length === 0 ? null : errors.map(error => <p>{error}</p>)} 
-            <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600'>Submit</button>
+            <button className='block w-full p-3 text-center text-white duration-300 bg-teal-500 rounded-lg hover:bg-teal-600'>Submit</button>
         </form>
     )
 }
