@@ -8,34 +8,34 @@ import { AddApplicantToJob } from './AddApplicantToJob';
 export const Applicant = ({ applicant }) => {
     const [showEdit, setShowEdit] = useState(false)
     const [showCandidateListForm, setShowCandidateListForm] = useState(false)
-    const lists = applicant.lists.map(list => <li key={list.id}>{list.name}</li>)
     const [showCandidateJobForm, setShowCandidateJobForm] = useState(false)
 
     const onEditClick = () => setShowEdit(!showEdit)
     const onAddToListClick = () => setShowCandidateListForm(!showCandidateListForm)
     const onAddToJobClick = () => setShowCandidateJobForm(!showCandidateJobForm)
 
-    const applicantCard = 
-    <ul>
-        <a href={`/applicants/${applicant.id}`} target="_blank" rel="noopener noreferrer" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Name: {applicant.first_name} {applicant.last_name}</a>
-        <li>email: {applicant.email}</li>
-        <li>Phone Number: {applicant.phone}</li>
-        <li>Position: {applicant.position}</li>
-        <li>City: {applicant.city}</li>
-        <li>State: {applicant.state}</li>
-        <ApplicantStatus applicant={applicant} />
-        <li>Lists:</li>
-        <ul>{lists}</ul>
-    </ul>
+    const applicantCard =
+    <div className='break-all'>
+        <a className='text-blue-500 hover:bg-gray-100' href={`/applicants/${applicant.id}`} target="_blank" rel="noopener noreferrer">{applicant.first_name} {applicant.last_name}</a>
+        <ul>
+            <li>{applicant.email}</li>
+            <li>Phone Number: {applicant.phone}</li>
+            <li>Position: {applicant.position}</li>
+            <li>City: {applicant.city}</li>
+            <li>State: {applicant.state}</li>
+            <ApplicantStatus applicant={applicant} />
+        </ul>
+    </div>
 
     return (
-        <div  className="border-black border-4 p-8 inline-flex flex-col">
+        <div className="p-4 mb-4 text-center transition duration-200 transform bg-white border rounded-lg shadow-md hover:scale-105">
             {showEdit ? <EditApplicant applicant={applicant} setShowEdit={setShowEdit} /> : applicantCard}
             {showCandidateListForm ? <AddApplicantToList applicant={applicant} setShowCandidateListForm={setShowCandidateListForm} /> : null}
-            <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" onClick={onAddToListClick}>{showCandidateListForm ? 'Cancel' : 'Add to a list'}</button>
-            {showCandidateJobForm ? <AddApplicantToJob applicant={applicant} setShowCandidateJobForm={setShowCandidateJobForm} /> : <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" onClick={onAddToJobClick}>Add to Job</button>}
-            <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" onClick={onEditClick}>{showEdit ? `Cancel` : `Edit`}</button>
+            <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600' onClick={onAddToListClick}>{showCandidateListForm ? 'Cancel' : 'Add to a list'}</button>
+            {showCandidateJobForm ? <AddApplicantToJob applicant={applicant} setShowCandidateJobForm={setShowCandidateJobForm} /> : null}
+            <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600' onClick={onAddToJobClick}>{showCandidateJobForm ? 'Cancel' : 'Add to Job'}</button>
+            <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600' onClick={onEditClick}>{showEdit ? `Cancel` : `Edit`}</button>
             <DeleteApplicant applicant={applicant} />
-        </div>
+            </div>
     )
 }

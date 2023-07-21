@@ -28,11 +28,11 @@ export const AddApplicantToJob = ({ applicant, setShowCandidateJobForm }) => {
 
     return(
         <form onSubmit={handleAddToJobClick}>
-            <select onChange={handleJobChange}>
+            <select className="block w-full px-3 py-2 mb-2 text-gray-700 bg-white border rounded-lg focus:outline-none focus:ring focus:border-blue-300" onChange={handleJobChange}>
                 <option value='Select a job below'>'Select a job below'</option>
                 {jobs.map((job) => <option key={job.id} value={job.id}>{job.title}</option>)}
             </select>
-            <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">Submit</button>
+            <button className='block w-full p-3 text-center text-white duration-300 bg-blue-700 rounded-sm hover:bg-blue-500'>Submit</button>
         </form>
     )
 }

@@ -37,21 +37,21 @@ export const EditApplicant = ({ setShowEdit, applicant }) => {
     
     return (
         <form onSubmit={handleEditSubmitClick}>
-            <label>First Name:</label>
-            <input className="w-full px-3 py-2 border border-gray-300 rounded-md" type='text' value={firstName} onChange={onFirstNameChange} />
-            <label>Last Name:</label>
-            <input className="w-full px-3 py-2 border border-gray-300 rounded-md" type='text' value={lastName} onChange={onLastNameChange} />
-            <label>Email:</label>
-            <input className="w-full px-3 py-2 border border-gray-300 rounded-md" type='text' value={email} onChange={onEmailChange} />
-            <label>Phone Number:</label>
-            <input className="w-full px-3 py-2 border border-gray-300 rounded-md" type='number' value={phone} onChange={onPhoneChange} />
-            <label>Position:</label>
-            <input className="w-full px-3 py-2 border border-gray-300 rounded-md" type='text' value={position} onChange={onPositionChange} />
-            <label>City:</label>
-            <input className="w-full px-3 py-2 border border-gray-300 rounded-md" type='text' value={city} onChange={onCityChange} />
-            <label>State:</label>
-            <input className="w-full px-3 py-2 border border-gray-300 rounded-md" type='text' value={state} onChange={onStateChange} />
-            <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">Submit</button>
+            <label className="block mb-2 font-bold">First Name:</label>
+            <input className="w-full px-3 py-2 mb-2 border rounded-lg" value={firstName} onChange={onFirstNameChange} />
+            <label className="block mb-2 font-bold">Last Name:</label>
+            <input className="w-full px-3 py-2 mb-2 border rounded-lg" value={lastName} onChange={onLastNameChange} />
+            <label className="block mb-2 font-bold">Email:</label>
+            <input className="w-full px-3 py-2 mb-2 border rounded-lg" value={email} onChange={onEmailChange} />
+            <label className="block mb-2 font-bold">Phone Number:</label>
+            <input className="w-full px-3 py-2 mb-2 border rounded-lg" type='number' value={phone} onChange={onPhoneChange} />
+            <label className="block mb-2 font-bold">Position:</label>
+            <input className="w-full px-3 py-2 mb-2 border rounded-lg" value={position} onChange={onPositionChange} />
+            <label className="block mb-2 font-bold">City:</label>
+            <input className="w-full px-3 py-2 mb-2 border rounded-lg" value={city} onChange={onCityChange} />
+            <label className="block mb-2 font-bold">State:</label>
+            <input className="w-full px-3 py-2 mb-2 border rounded-lg" value={state} onChange={onStateChange} />
+            <button className='block w-full p-3 text-center text-white duration-300 bg-blue-700 rounded-sm hover:bg-blue-500'>Submit</button>
         </form>
     )
 }

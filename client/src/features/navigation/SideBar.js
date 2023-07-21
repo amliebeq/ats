@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { userAdded } from '../login_page/loginSlice';
 
 export const SideBar = () => {
@@ -19,18 +19,16 @@ export const SideBar = () => {
         })
     }
 
-    const navigate = (path) => {
-        history.push(path)        
-    }
     return (
-        <div className='flex'>
-            <nav className="w-1/6 py-8 bg-white">
-            <button onClick={() => navigate('/')} className="block py-2 px-4 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200">Home</button>
-            <button onClick={() => navigate('/applicants')} className="block py-2 px-4 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200">Applicants</button>
-            <button onClick={() => navigate('/jobs')} className="block py-2 px-4 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200">Jobs</button>
-            <button onClick={() => navigate('/lists')} className="block py-2 px-4 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200">Lists</button>
-            <button onClick={handleLogout} id='navButton' className="block py-2 px-4 text-gray-800 hover:bg-red-200 focus:outline-none focus:bg-red-200">Logout</button>
-            </nav>
-        </div>
+            <div className='w-1/12 min-h-screen pr-0 bg-black'>
+                <nav className='fixed flex flex-col gap-4 mt-4'>
+                    <Link to={'/'} className='pl-1 text-white hover:text-green-500'>🏠Home</Link>
+                    <Link to={'/applicants'} className='text-white pls-1 hover:text-green-500'>🙂People</Link>
+                    <Link to={'/jobs'} className='pl-1 text-white hover:text-green-500'>💼Jobs</Link>
+                    <Link to={'/lists'} className='pl-1 text-white hover:text-green-500'>📖Lists</Link>
+                    <div className='m-auto'></div>
+                    <Link onClick={handleLogout} to={'/'} className='fixed pl-1 text-red-500 bottom-8 hover:text-black hover:bg-red-600'>🚫Logout</Link>
+                </nav>
+            </div>
     )    
 }

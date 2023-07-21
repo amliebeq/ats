@@ -36,7 +36,7 @@ const handleNewToDoSubmitClick = (e) => {
         <form onSubmit={handleNewToDoSubmitClick}>
             <label>New To Do Item</label>
             <input type='text' value={newToDo} onChange={onNewToDoChange} />
-            <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" type='submit'>Submit</button>
+            <button type='submit'>Submit</button>
         </form>
     )
 }

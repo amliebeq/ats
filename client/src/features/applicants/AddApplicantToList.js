@@ -29,11 +29,11 @@ export const AddApplicantToList = ({ applicant, setShowCandidateListForm }) => {
 
     return(
         <form onSubmit={handleAddToListClick}>
-            <select onChange={handleListChange}>
-                <option value='Select a list below'>'Select a list below'</option>
+            <select className="block w-full px-3 py-2 mb-2 text-gray-700 bg-white border rounded-lg focus:outline-none focus:ring focus:border-blue-300" onChange={handleListChange}>
+                <option value='Select a list'>'Select a list below'</option>
                 {lists.map((list) => <option key={list.id} value={list.id}>{list.name}</option>)}
             </select>
-            <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">Submit</button>
+            <button className='block w-full p-3 text-center text-white duration-300 bg-blue-700 rounded-sm hover:bg-blue-500'>Submit</button>
         </form>
     )
 }

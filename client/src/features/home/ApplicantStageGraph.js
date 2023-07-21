@@ -7,11 +7,11 @@ export const ApplicantStageGraph = () => {
 
     const newApplicants = applicants.filter(applicant => applicant.status === 'New')
     const lvmApplicants = applicants.filter(applicant => applicant.status === 'Left Voicemail')
-    const pssApplicants = applicants.filter(applicant => applicant.status === 'Phone Screen Scheduled')
+    const pssApplicants = applicants.filter(applicant => applicant.status === 'Phone Screen')
     const assessmentApplicants = applicants.filter(applicant => applicant.status === 'Assessment')
-    const fciApplicants = applicants.filter(applicant => applicant.status === 'First Client Interview')
-    const sciApplicants = applicants.filter(applicant => applicant.status === 'Second Client Interview')
-    const tciApplicants = applicants.filter(applicant => applicant.status === 'Third Client Interview')
+    const fciApplicants = applicants.filter(applicant => applicant.status === 'First Interview')
+    const sciApplicants = applicants.filter(applicant => applicant.status === 'Second Interview')
+    const tciApplicants = applicants.filter(applicant => applicant.status === 'Third Interview')
 
 
     const data = [
@@ -46,8 +46,8 @@ export const ApplicantStageGraph = () => {
       ];
     
       return (
-        <div className='border border-black'>
-            <ResponsiveContainer width={1400} height={200}>
+        <div>
+            <ResponsiveContainer width='95%' height={200}>
                 <BarChart
                     width="100%"
                     height={300}
@@ -59,6 +59,7 @@ export const ApplicantStageGraph = () => {
                     bottom: 5,
                     }}
                 >
+                    <CartesianGrid />
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip />

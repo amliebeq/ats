@@ -27,25 +27,26 @@ export const ApplicantStatus = ({ applicant }) => {
 
     const showStatusForm = () => {
         if (statusChangeVisible === false) {
-            return <li onClick={onStatusClick} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Status: {applicant.status}</li>
+            return <li className='text-blue-500 hover:bg-gray-100 hover:cursor-pointer' onClick={onStatusClick}>Status: {applicant.status}</li>
         }
         else {
             return(
         <form onSubmit={handleStatusSubmitClick}>
-            <label>Status:</label>
-            <select onChange={onStatusChange} >
+            <select className="block w-full px-3 py-2 mb-2 text-gray-700 bg-white border rounded-lg focus:outline-none focus:ring focus:border-blue-300" onChange={onStatusChange} >
                 <option value='None'>Select Status</option>
                 <option value='New'>New</option>
                 <option value='Left Voicemail'>Left Voicemail</option>
-                <option value='Phone Screen Scheduled'>Phone Screen Scheduled</option>
+                <option value='Phone Screen'>Phone Screen</option>
                 <option value='Assessment'>Assessment</option>
-                <option value='First Client Interview'>First Client Interview</option>
-                <option value='Second Client Interview'>Second Client Interview</option>
-                <option value='Third Client Interview'>Third Client Interview</option>
+                <option value='First Interview'>First Interview</option>
+                <option value='Second Interview'>Second Interview</option>
+                <option value='Third Interview'>Third Interview</option>
                 <option value='Placed'>Placed</option>
             </select>
-            <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" type='submit'>Submit</button>
-            <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" onClick={onStatusClick}>Cancel</button>
+            <div className='flex flex-wrap'>
+                <button className='block w-1/2 p-3 text-center text-white duration-300 bg-blue-700 rounded-sm hover:bg-blue-500' type='submit'>Submit</button>
+                <button className='block w-1/2 p-3 text-center text-white duration-300 bg-blue-700 rounded-sm hover:bg-blue-500' onClick={onStatusClick}>Cancel</button>
+            </div>
         </form>
             )
         }

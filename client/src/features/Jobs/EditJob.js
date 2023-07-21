@@ -31,15 +31,15 @@ export const EditJob = ({ job, setFormVisible }) => {
 
     return (
         <form onSubmit={onEditSubmit}>
-            <label>Name:</label>
-            <input className="w-full px-3 py-2 border border-gray-300 rounded-md" type='text' value={editJobName} onChange={onJobNameChange} />
-            <label>Location:</label>
-            <input className="w-full px-3 py-2 border border-gray-300 rounded-md" type='text' value={editJobLocation} onChange={onJobLocationChange}/>
-            <label>Pay Range: $</label>
-            <input className="w-full px-3 py-2 border border-gray-300 rounded-md" type='text' value={editJobPay} onChange={onJobPayChange}/>
-            <label>Description:</label>
-            <textarea type='text' value={editJobDescription} className="w-full px-3 py-2 border border-gray-300 rounded-md" onChange={onJobDescriptionChange}/>
-            <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">Submit</button>
+            <label className="block mb-2 font-bold">Name:</label>
+            <input className="w-full px-3 py-2 mb-2 border rounded-lg" type='text' value={editJobName} onChange={onJobNameChange} />
+            <label className="block mb-2 font-bold"> Location:</label>
+            <input className="w-full px-3 py-2 mb-2 border rounded-lg" type='text' value={editJobLocation} onChange={onJobLocationChange}/>
+            <label className="block mb-2 font-bold">Pay Range: $</label>
+            <input className="w-full px-3 py-2 mb-2 border rounded-lg" type='text' value={editJobPay} onChange={onJobPayChange}/>
+            <label className="block mb-2 font-bold">Description:</label>
+            <textarea className="w-full px-3 py-2 mb-2 border rounded-lg" type='text' value={editJobDescription} onChange={onJobDescriptionChange}/>
+            <button className='block w-full p-3 text-center text-white duration-300 bg-blue-700 rounded-sm hover:bg-blue-500'>Submit</button>
         </form>
     )
 }

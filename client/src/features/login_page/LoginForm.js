@@ -40,13 +40,13 @@ const LoginForm = () => {
     }
     
     return (
-        <form id='loginForm' onSubmit={handleSubmit}>
-            <label className="block text-gray-700 text-sm font-bold mb-2">Username</label>
-            <input type='Text' value={username} onChange={handleUsernameChange} />
-            <label>Password</label>
-            <input type='Password' value={password} onChange={handlePasswordChange} />
+        <form className='mt-6' id='loginForm' onSubmit={handleSubmit}>
+            <label className='block text-sm font-bold text-grey-darker'>Username</label>
+            <input className='w-full px-4 py-3 mt-3 bg-green-100 rounded-sm focus:outline-none' type='Text' value={username} onChange={handleUsernameChange} />
+            <label className='block text-sm font-bold text-grey-darker'>Password</label>
+            <input className='w-full px-4 py-3 mt-3 bg-green-100 rounded-sm focus:outline-none' type='Password' value={password} onChange={handlePasswordChange} />
             {errors ? <p>{errors}</p> : null}
-            <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">Login</button>
+            <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600'>Login</button>
         </form>
     )
 }

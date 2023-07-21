@@ -26,7 +26,7 @@ export const EditNote = ({ note, setEdit }) => {
     return(
         <form onSubmit={handleNoteSubmitClick}>
             <textarea onChange={onNoteChange} value={editNoteField} />
-            <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" type='Submit' >Submit</button>
+            <button type='Submit' >Submit</button>
         </form>
     )
 }

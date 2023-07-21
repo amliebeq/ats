@@ -12,7 +12,7 @@ export const ApplicantActionRequired = () => {
             {newApplicantList.map((applicant) => {
                 return (
                     <div>
-                        <a key={applicant.id} href={`/applicants/${applicant.id}`} target="_blank" rel="noopener noreferrer" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">{applicant.first_name} {applicant.last_name}</a>
+                        <a key={applicant.id} href={`/applicants/${applicant.id}`} target="_blank" rel="noopener noreferrer">{applicant.first_name} {applicant.last_name}</a>
                     </div>
             )})}
         </div>

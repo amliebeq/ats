@@ -29,7 +29,7 @@ export const EditList = ({ setEdit, list }) => {
             <form onSubmit={onEditSubmitClick}>
                 <label>Name:</label>
                 <input type='text' value={name} onChange={handleListNameChange} />
-                <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">Submit</button>
+                <button>Submit</button>
             </form>
         </div>
     )

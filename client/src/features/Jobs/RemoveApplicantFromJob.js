@@ -16,6 +16,8 @@ export const RemoveApplicantFromJob = ({ job, applicant }) => {
         dispatch(applicantRemovedFromJob(data))
     }
     return (
-        <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" onClick={handleRemoveClick}>Remove</button>
+        <div className='px-4'>
+            <button className='block w-8 h-8 text-center text-white duration-300 bg-red-700 rounded-sm hover:bg-red-500' onClick={handleRemoveClick}>-</button>
+        </div>
     )
 }

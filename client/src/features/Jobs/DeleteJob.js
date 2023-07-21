@@ -15,6 +15,6 @@ export const DeleteJob = ({ job }) => {
     }
 
     return (
-        <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" onClick={handleDeleteClick}>Delete</button>
+        <button button className='block w-1/2 p-3 text-center text-white duration-300 bg-red-800 rounded-sm hover:bg-red-600' onClick={handleDeleteClick}>Delete</button>
     )
 }

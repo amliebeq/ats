@@ -1,5 +1,5 @@
 class Applicant < ApplicationRecord
-    has_many_attached :resumes
+    has_one_attached :resume
     has_many :notes
     belongs_to :user
     has_and_belongs_to_many :lists

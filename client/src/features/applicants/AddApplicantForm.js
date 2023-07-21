@@ -35,7 +35,7 @@ export const AddApplicantForm = () => {
             last_name: lastName,
             phone,
             user_id: user.id,
-            position            
+            position,                   
         }
         fetch ('/applicants' , {
             method: "POST",
@@ -47,6 +47,7 @@ export const AddApplicantForm = () => {
         .then ((r) => {
             if (r.ok) {
                 r.json().then ((data) => dispatch(applicantAdded(data)))
+                console.log(data)
                 setApplicantFormVisible(false)
                 setCity('')
                 setEmail('')
@@ -64,23 +65,25 @@ export const AddApplicantForm = () => {
     const showForm = () => { 
         if (applicantFormVisible) {
             return(
-            <form className="max-w-sm mx-auto" onSubmit={handleNewApplicantClick}>
-                <label>FirstName</label>
-                <input className="w-full px-3 py-2 border border-gray-300 rounded-md" type='text' value={firstName} onChange={handleFirstNameChange} /> 
-                <label>Last Name</label>
-                <input className="w-full px-3 py-2 border border-gray-300 rounded-md" type='text' value={lastName} onChange={handleLastNameChange} />
-                <label>Phone Number</label>
-                <input className="w-full px-3 py-2 border border-gray-300 rounded-md" type='number' value={phone} onChange={handlePhoneChange} />
-                <label>City</label>
-                <input className="w-full px-3 py-2 border border-gray-300 rounded-md" type='text' value={city} onChange={handleCityChange} />
-                <label>State</label>
-                <input className="w-full px-3 py-2 border border-gray-300 rounded-md" type='text' value={state} onChange={handleStateChange} />  
-                <label>Applicant Email</label>
-                <input className="w-full px-3 py-2 border border-gray-300 rounded-md" type='text' value={email} onChange={handleEmailChange} />
-                <label>Most Recent Job Title</label>
-                <input className="w-full px-3 py-2 border border-gray-300 rounded-md" type='text' value={position} onChange={handlePositionChange} />
-                {errors.length === 0 ? null : errors.map(error => <p key={error}>{error}</p>)}     
-                <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" type='submit' >Submit</button>            
+            <form className="p-4 mb-4 bg-white rounded-lg shadow-md" onSubmit={handleNewApplicantClick}>
+                <label className="block mb-2 font-bold">FirstName</label>
+                <input className="w-full px-3 py-2 mb-2 border rounded-lg" type='text' value={firstName} onChange={handleFirstNameChange} /> 
+                <label className="block mb-2 font-bold">Last Name</label>
+                <input className="w-full px-3 py-2 mb-2 border rounded-lg" type='text' value={lastName} onChange={handleLastNameChange} />
+                <label className="block mb-2 font-bold">Phone Number</label>
+                <input className="w-full px-3 py-2 mb-2 border rounded-lg" type='number' value={phone} onChange={handlePhoneChange} />
+                <label className="block mb-2 font-bold">City</label>
+                <input className="w-full px-3 py-2 mb-2 border rounded-lg" type='text' value={city} onChange={handleCityChange} />
+                <label className="block mb-2 font-bold">State</label>
+                <input className="w-full px-3 py-2 mb-2 border rounded-lg" type='text' value={state} onChange={handleStateChange} />  
+                <label className="block mb-2 font-bold">Applicant Email</label>
+                <input className="w-full px-3 py-2 mb-2 border rounded-lg" type='text' value={email} onChange={handleEmailChange} />
+                <label className="block mb-2 font-bold">Most Recent Job Title</label>
+                <input className="w-full px-3 py-2 mb-2 border rounded-lg" type='text' value={position} onChange={handlePositionChange} />
+                {errors.length === 0 ? null : errors.map(error => <p className='text-lg text-center text-red-600' key={error}>{error}</p>)}
+                <div className='px-20'>    
+                    <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600' type='submit'>Submit</button>
+                </div>             
             </form>
             )
         }
@@ -88,8 +91,12 @@ export const AddApplicantForm = () => {
 
     return (
         <div>
-            {showForm()}
-            <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" onClick={onVisibleClick} >{applicantFormVisible ? 'Cancel' : 'Add a New Applicant'}</button>
+            <div className='px-10'>
+                {showForm()}
+            </div>
+            <div className='w-full px-36'>
+                <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600 ' onClick={onVisibleClick} >{applicantFormVisible ? 'Cancel' : 'Add a New Applicant'}</button>
+            </div>
         </div>
     )
 }

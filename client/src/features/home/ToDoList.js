@@ -12,9 +12,10 @@ export const ToDoList = () => {
 
     return(
         <div>
+            <p>To-Do List</p>
             {createToDoList()}
             {showForm ? <AddToDo setShowForm={setShowForm} /> : null}
-            <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" onClick={handleShowFormClick} >{showForm ? 'Cancel' : '+'}</button>
+            <button onClick={handleShowFormClick} >{showForm ? 'Cancel' : '+'}</button>
         </div>
     )
 }

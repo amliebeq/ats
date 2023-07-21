@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :notes, only: [:create, :update, :destroy]
   resources :applicants, only: [:create, :update, :destroy, :index]
   resources :users, only: [:index]
+  resources :resumes, only: [:create]
 
   post "/signup", to: "users#create"
   get "/me", to: "users#show"

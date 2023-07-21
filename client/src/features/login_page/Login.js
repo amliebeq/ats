@@ -13,16 +13,18 @@ const Login = () => {
     }
 
     return (
-        <div id='login'>
+        <div className="w-10/12 p-4 m-auto bg-white shadow-md lg:w-4/12 md:6/12" id='login'>
             {login ? (
-                <div id='loginForm'>
+                <div className='"py-8 px-8 rounded-xl"'>
+                    <h1 className="mt-3 text-2xl font-medium text-center">Login</h1>
                     <LoginForm />
-                    <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" id='loginButton' onClick={handleClick}>Don't have an account?</button>
+                    <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600' onClick={handleClick}>Don't have an account?</button>
                 </div>
             ) : (
                 <div>
+                    <h1 className="mt-3 text-2xl font-medium text-center">Sign Up</h1>
                     <SignupForm />
-                    <button className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600" id='signupButton' onClick={handleClick}>Already have an account?</button>
+                    <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600' onClick={handleClick}>Already have an account?</button>
                 </div>
             )}
         </div>

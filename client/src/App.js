@@ -26,14 +26,14 @@ function App() {
     })
   }, [dispatch])
 
-  if (!user) return <Login />
+  if (!user) return (<div className="h-screen pt-4 bg-purple-100"><Login /></div>)
 
   return (
-    <div className="flex">
+    <div className="flex gap-6 bg-purple-100 h-max">
       <SideBar />
-      <div className="flex flex-col">
+      <div className="flex-grow w-11/12">
         <Switch>
-        <Route exact path = '/'>
+          <Route exact path = '/'>
             <HomePage />
           </Route>
           <Route exact path = '/applicants'>
