@@ -3,9 +3,9 @@ import { RemoveToDo } from './RemoveToDo';
 
 export const ToDo = ({ toDo }) => {
     return (
-        <div>
+        <div className='flex flex-wrap break-all'>
             <ul>
-                <li>{toDo.item}</li>
+                <li className='pr-4'>{toDo.item}</li>
             </ul>
             <RemoveToDo toDo={toDo} />
         </div>

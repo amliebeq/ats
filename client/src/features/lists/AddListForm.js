@@ -42,10 +42,10 @@ export const AddListForm = () => {
         if (formVisible) {
             return (
                 <form onSubmit={handleListSubmit}>
-                    <label>New List Name</label>
-                    <input type='text' value={name} onChange={onListChange} />
+                    <label className="block mb-2 font-bold">New List Name</label>
+                    <input className="w-full px-3 py-2 mb-2 border rounded-lg" type='text' value={name} onChange={onListChange} />
                     {errors.length === 0 ? null : errors.map(error => <p key={error}>{error}</p>)}     
-                    <button type='submit' >Submit</button>                       
+                    <button className='block w-full p-3 text-center text-white duration-300 bg-blue-700 rounded-sm hover:bg-blue-500' type='submit' >Submit</button>                       
                 </form>
             )
         }
@@ -54,7 +54,7 @@ export const AddListForm = () => {
     return (
         <div>
             {renderListForm()}
-            <button onClick={handleVisibleClick} >{formVisible ? "cancel" : "Create A New List"}</button>
+            <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600' onClick={handleVisibleClick} >{formVisible ? "cancel" : "Create A New List"}</button>
         </div>
     )
 }

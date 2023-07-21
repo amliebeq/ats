@@ -15,6 +15,6 @@ export const DeleteList = ({ list }) => {
     }
 
     return (
-        <button onClick={handleDeleteClick}>Delete</button>
+        <button className='block w-1/2 p-3 text-center text-white duration-300 bg-red-800 rounded-sm hover:bg-red-600' onClick={handleDeleteClick}>Delete</button>
     )
 }

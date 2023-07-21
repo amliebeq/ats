@@ -46,8 +46,9 @@ export const ApplicantStageGraph = () => {
       ];
     
       return (
-        <div>
-            <ResponsiveContainer width='95%' height={200}>
+        <div className="p-4 mb-4 mr-4 bg-white border rounded-lg shadow-md"> 
+            <p className='pb-2 text-lg font-bold'>Candidates By Stage</p>
+            <ResponsiveContainer width='100%' height={200}>
                 <BarChart
                     width="100%"
                     height={300}

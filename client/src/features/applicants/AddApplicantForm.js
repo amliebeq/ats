@@ -95,7 +95,7 @@ export const AddApplicantForm = () => {
                 {showForm()}
             </div>
             <div className='w-full px-36'>
-                <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600 ' onClick={onVisibleClick} >{applicantFormVisible ? 'Cancel' : 'Add a New Applicant'}</button>
+                <button className='block w-full p-3 text-center text-white duration-300 bg-green-800 rounded-sm hover:bg-green-600 ' onClick={onVisibleClick} >{applicantFormVisible ? 'Cancel' : 'Add a New Candidate'}</button>
             </div>
         </div>
     )
