@@ -1,10 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, Navigate} from 'react-router-dom';
 import { userAdded } from '../login_page/loginSlice';
 
 export const SideBar = () => {
-    const history = useHistory()
     const dispatch = useDispatch()
 
     const handleLogout = () => {
@@ -14,7 +13,7 @@ export const SideBar = () => {
         .then((r) => {
             if (r.ok) {
                 dispatch(userAdded(null))
-                history.push('/')
+                return <Navigate to="/" replace />
             }
         })
     }

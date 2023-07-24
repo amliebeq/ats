@@ -3,7 +3,6 @@ import Login from "./features/login_page/Login.js";
 import { useDispatch, useSelector} from "react-redux";
 import { userAdded } from "./features/login_page/loginSlice";
 import { ApplicantList } from "./features/applicants/ApplicantList";
-import { Route, Switch } from "react-router-dom";
 import { SideBar } from "./features/navigation/SideBar";
 import './App.css'
 import { JobsList } from "./features/Jobs/JobList";
@@ -11,6 +10,7 @@ import { ListList } from "./features/lists/ListList";
 import { ApplicantDetail } from "./features/applicants/ApplicantDetail";
 import { ListDetail } from "./features/lists/ListDetail";
 import { HomePage } from "./features/home/HomePage";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   const dispatch = useDispatch()
@@ -32,26 +32,14 @@ function App() {
     <div className="flex gap-6 bg-white h-max">
       <SideBar />
       <div className="flex-grow w-11/12">
-        <Switch>
-          <Route exact path = '/'>
-            <HomePage />
-          </Route>
-          <Route exact path = '/applicants'>
-            <ApplicantList />
-          </Route>
-          <Route exact path = '/applicants/:id'>
-            <ApplicantDetail />
-          </Route>
-          <Route exact path = '/jobs'>
-            <JobsList />
-          </Route>
-          <Route exact path = '/lists'>
-            <ListList />
-          </Route>
-          <Route exact path = '/lists/:id'>
-            <ListDetail />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route exact path = '/' element={<HomePage />} />
+          <Route exact path = '/applicants' element={<ApplicantList />} />
+          <Route exact path = '/applicants/:id' element={<ApplicantDetail />} />
+          <Route exact path = '/jobs' element={<JobsList />} />
+          <Route exact path = '/lists' element={<ListList />} />
+          <Route exact path = '/lists/:id' element={<ListDetail />} />
+        </Routes>
       </div>
     </div>
   )
