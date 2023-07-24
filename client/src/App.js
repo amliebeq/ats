@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Login from "/home/amliebeq/Developement/code/ats/client/src/features/login_page/Login.js";
+import Login from "./features/login_page/Login.js";
 import { useDispatch, useSelector} from "react-redux";
 import { userAdded } from "./features/login_page/loginSlice";
 import { ApplicantList } from "./features/applicants/ApplicantList";
