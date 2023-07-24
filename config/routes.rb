@@ -15,4 +15,8 @@ Rails.application.routes.draw do
   patch "/remove_applicant_from_list", to: "lists#removeApplicantFromList"
   patch "/add_applicant_to_job", to: "jobs#addApplicantToJob"
   patch "/remove_applicant_from_job", to: "jobs#removeApplicantFromJob"
+
+  get '*path',
+    to: 'fallback#index',
+    constraints: ->(req) { !req.xhr? && req.format.html? }
 end
