@@ -41,6 +41,7 @@ export const ApplicantStatus = ({ applicant }) => {
                 <option value='First Interview'>First Interview</option>
                 <option value='Second Interview'>Second Interview</option>
                 <option value='Third Interview'>Third Interview</option>
+                <option value='Offer'>Offer</option>
                 <option value='Placed'>Placed</option>
             </select>
             <div className='flex flex-wrap'>

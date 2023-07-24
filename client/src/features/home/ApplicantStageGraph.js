@@ -12,6 +12,7 @@ export const ApplicantStageGraph = () => {
     const fciApplicants = applicants.filter(applicant => applicant.status === 'First Interview')
     const sciApplicants = applicants.filter(applicant => applicant.status === 'Second Interview')
     const tciApplicants = applicants.filter(applicant => applicant.status === 'Third Interview')
+    const offApplicants = applicants.filter(applicant => applicant.status === 'Offer')
 
 
     const data = [
@@ -43,6 +44,10 @@ export const ApplicantStageGraph = () => {
             name: '3rd Interview',
             'Applicant Count': tciApplicants.length,
           },
+          {
+            name: 'Offer',
+            'Applicant Count': offApplicants.length,
+          },          
       ];
     
       return (
