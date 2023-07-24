@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, Navigate} from 'react-router-dom';
 import { userAdded } from '../login_page/loginSlice';
+import buthie from '/home/amliebeq/Developement/code/ats/client/src/features/navigation/0-1.jpg'
 
 export const SideBar = () => {
     const dispatch = useDispatch()
