@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   resources :to_dos, only: [:create, :update, :destroy]
-  resources :jobs, only: [:create, :update, :destroy, :index]
-  resources :lists, only: [:create, :update, :destroy, :index]
+  resources :jobs, only: [:create, :update, :destroy]
+  resources :lists, only: [:create, :update, :destroy]
   resources :notes, only: [:create, :update, :destroy]
-  resources :applicants, only: [:create, :update, :destroy, :index]
-  resources :users, only: [:index]
+  resources :applicants, only: [:create, :update, :destroy]
   resources :resumes, only: [:create]
 
   post "/signup", to: "users#create"

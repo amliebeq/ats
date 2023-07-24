@@ -1,9 +1,4 @@
 class ListsController < ApplicationController
-    def index
-        lists = List.all
-        render json: lists, status: :ok
-    end
-
     def create
         list = List.create(list_params)
         if list

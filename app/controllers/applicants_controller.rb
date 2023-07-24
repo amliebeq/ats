@@ -1,9 +1,4 @@
 class ApplicantsController < ApplicationController
-    def index
-        applicants = Applicant.all
-        render json: applicants, status: :ok
-    end
-
     def create
         applicant = Applicant.create(applicant_params)
         if applicant.valid?
