@@ -17,7 +17,7 @@ export const Applicant = ({ applicant }) => {
 
     const applicantCard =
     <div className='break-all'>
-        <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline hover:cursor-pointer" to={`/applicants/${applicant.id}`} target="_blank" rel="noopener noreferrer">{applicant.first_name} {applicant.last_name}</Link>
+        <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline hover:cursor-pointer" to={`/candidates/${applicant.id}`} target="_blank" rel="noopener noreferrer">{applicant.first_name} {applicant.last_name}</Link>
         <ul>
             <li>{applicant.email}</li>
             <li>Phone Number: {applicant.phone}</li>

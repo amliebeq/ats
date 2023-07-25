@@ -8,8 +8,6 @@ export const ApplicantDetail = () => {
     const { id } = useParams()
     const applicant = useSelector(state => state.login.user.applicants).find(applicant => applicant.id == id)
 
-    console.log(applicant)
-
     return (
         <div>
             <div className="p-4 mb-4 mr-4 bg-white border rounded-lg shadow-md">

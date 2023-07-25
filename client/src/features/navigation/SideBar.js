@@ -22,7 +22,7 @@ export const SideBar = () => {
         <div className='w-1/12 min-h-screen pr-0 bg-black'>
             <nav className='fixed flex flex-col gap-4 mt-4'>
                 <Link to={'/'} className='pl-1 text-white hover:text-teal-500'>🏠Home</Link>
-                <Link to={'/applicants'} className='text-white pls-1 hover:text-teal-500'>🙂People</Link>
+                <Link to={'/candidates'} className='text-white pls-1 hover:text-teal-500'>🙂People</Link>
                 <Link to={'/jobs'} className='pl-1 text-white hover:text-teal-500'>💼Jobs</Link>
                 <Link to={'/lists'} className='pl-1 text-white hover:text-teal-500'>📖Lists</Link>
                 <div className='m-auto'></div>

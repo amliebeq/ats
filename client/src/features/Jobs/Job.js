@@ -11,7 +11,7 @@ export const Job = ({ job }) => {
 
     const jobCard =        
     <div>
-        <p>Name: {job.title}</p>
+        <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline hover:cursor-pointer" to={`/jobs/${job.id}`} target="_blank" rel="noopener noreferrer">Name: {job.title}</Link>
         <p>Applicants: {job.applicants.length}</p>
         <p>Location: {job.location}</p>
         <p>Pay Range: ${job.pay_rate}</p>

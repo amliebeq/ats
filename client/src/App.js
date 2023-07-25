@@ -11,6 +11,7 @@ import { ApplicantDetail } from "./features/applicants/ApplicantDetail";
 import { ListDetail } from "./features/lists/ListDetail";
 import { HomePage } from "./features/home/HomePage";
 import { Route, Routes } from "react-router-dom";
+import { JobDetail } from "./features/Jobs/JobDetail.js";
 
 function App() {
   const dispatch = useDispatch()
@@ -34,9 +35,10 @@ function App() {
       <div className="flex-grow w-11/12">
         <Routes>
           <Route exact path = '/' element={<HomePage />} />
-          <Route exact path = '/applicants' element={<ApplicantList />} />
-          <Route exact path = '/applicants/:id' element={<ApplicantDetail />} />
+          <Route exact path = '/candidates' element={<ApplicantList />} />
+          <Route exact path = '/candidates/:id' element={<ApplicantDetail />} />
           <Route exact path = '/jobs' element={<JobsList />} />
+          <Route exact path = '/jobs/:id' element={<JobDetail />} />
           <Route exact path = '/lists' element={<ListList />} />
           <Route exact path = '/lists/:id' element={<ListDetail />} />
         </Routes>
