@@ -10,7 +10,7 @@ export const JobActionRequired = () => {
     const actionableJobsList = actionableJobs.map((job) => {
         return(
             <div>
-                <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline" to={`/jobs`} key={job.id}>{job.title}</Link>
+                <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline" to={`/jobs/${job.id}`} key={job.id}>{job.title}</Link>
             </div>
         )
     })

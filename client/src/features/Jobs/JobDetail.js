@@ -22,8 +22,6 @@ export const JobDetail = () => {
         return <Applicant applicant={applicant} key={applicant.id} />
     })
 
-    console.log(applicantList)
-
     return (
         <div>
             <div className="p-4 mb-4 mr-4 bg-white border rounded-lg shadow-md">

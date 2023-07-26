@@ -21,7 +21,7 @@ export const Job = ({ job }) => {
             {job.applicants.map((applicant) => {
                 return (
                 <div className='flex flex-wrap'>
-                    <Link to={`/applicants/${applicant.id}`} target="_blank" rel="noopener noreferrer" className='pb-4 font-medium text-blue-600 dark:text-blue-500 hover:underline'>{applicant.first_name} {applicant.last_name}</Link>
+                    <Link to={`/candidates/${applicant.id}`} target="_blank" rel="noopener noreferrer" className='pb-4 font-medium text-blue-600 dark:text-blue-500 hover:underline'>{applicant.first_name} {applicant.last_name}</Link>
                     <RemoveApplicantFromJob job={job} applicant={applicant} />
                 </div>
             )})}
