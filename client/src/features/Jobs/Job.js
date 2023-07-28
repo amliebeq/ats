@@ -11,7 +11,7 @@ export const Job = ({ job }) => {
 
     const jobCard =        
     <div>
-        <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline hover:cursor-pointer" to={`/jobs/${job.id}`} target="_blank" rel="noopener noreferrer">Name: {job.title}</Link>
+        <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline hover:cursor-pointer" to={`/jobs/${job.id}`}>Name: {job.title}</Link>
         <p>Applicants: {job.applicants.length}</p>
         <p>Location: {job.location}</p>
         <p>Pay Range: ${job.pay_rate}</p>
@@ -21,7 +21,7 @@ export const Job = ({ job }) => {
             {job.applicants.map((applicant) => {
                 return (
                 <div className='flex flex-wrap'>
-                    <Link to={`/candidates/${applicant.id}`} target="_blank" rel="noopener noreferrer" className='pb-4 font-medium text-blue-600 dark:text-blue-500 hover:underline'>{applicant.first_name} {applicant.last_name}</Link>
+                    <Link to={`/candidates/${applicant.id}`} className='pb-4 font-medium text-blue-600 dark:text-blue-500 hover:underline'>{applicant.first_name} {applicant.last_name}</Link>
                     <RemoveApplicantFromJob job={job} applicant={applicant} />
                 </div>
             )})}

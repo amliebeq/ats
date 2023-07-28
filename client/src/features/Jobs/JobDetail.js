@@ -1,25 +1,13 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Link, useParams } from 'react-router-dom'
-import { ApplicantStatus } from '../applicants/ApplicantStatus'
+import { useParams } from 'react-router-dom'
 import { Applicant } from '../applicants/Applicant'
 
 export const JobDetail = () => {
     const { id } = useParams()
     const jobDetail = useSelector(state => state.login.user.jobs).find(job => job.id == id)
 
-    const applicantList = jobDetail.applicants.map((applicant) => {
-        // return(
-        //     <div className='flex flex-wrap'>
-        //         <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline hover:cursor-pointer" to={`/candidates/${applicant.id}`} target="_blank" rel="noopener noreferrer">{applicant.first_name} {applicant.last_name}</Link>
-        //         <div className='pl-12'>
-        //             <ApplicantStatus applicant={applicant}/>
-        //         </div>
-        //         <p className='pl-12'>phone number: {applicant.phone}</p>
-        //         <p className='pl-12'>email: {applicant.email}</p>
-        //     </div>    
-        // )
-        return <Applicant applicant={applicant} key={applicant.id} />
+    const applicantList = jobDetail.applicants.map((applicant) => {return <Applicant applicant={applicant} key={applicant.id} />
     })
 
     return (
