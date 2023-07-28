@@ -68,7 +68,7 @@ export const AddJobForm = () => {
                 <input className="w-full px-3 py-2 mb-2 border rounded-lg" type='text' value={payRate} onChange={handlePayRateChange} /> 
                 <label className="block mb-2 font-bold">Job Description</label>
                 <textarea className="w-full px-3 py-2 mb-2 border rounded-lg" type='text' value={description} onChange={handleDescriptionChange} />
-                {errors.length === 0 ? null : errors.map(error => <p key={error}>{error}</p>)}     
+                {errors.length === 0 ? null : errors.map(error => <p className='text-red-600' key={error}>{error}</p>)}     
                 <button className='block w-full p-3 text-center text-white duration-300 bg-indigo-500 rounded-lg hover:bg-indigo-600' type='submit' >Submit</button>            
             </form>
             )
