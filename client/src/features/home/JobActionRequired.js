@@ -15,8 +15,6 @@ export const JobActionRequired = () => {
         )
     })
 
-    console.log(actionableJobsList)
-
     return (
         <div className="p-4 mb-4 mr-4 bg-gray-100 border rounded-lg shadow-md">
             <p className='text-lg font-bold'>Jobs With Zero Candidates</p>

@@ -16,7 +16,6 @@ import { JobDetail } from "./features/Jobs/JobDetail.js";
 function App() {
   const dispatch = useDispatch()
   const user = useSelector(state => state.login.user)
-  console.log(user)
   
   useEffect(() => { 
     fetch("/me")
