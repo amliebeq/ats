@@ -10,6 +10,7 @@ export const EditApplicant = ({ setShowEdit, applicant }) => {
     const [position, setPosition] = useState(`${applicant.position}`)
     const [city, setCity] = useState(`${applicant.city}`)
     const [state, setState] = useState(`${applicant.state}`)
+    const [errors, setErrors] = useState([])
     const dispatch = useDispatch()
 
     const onFirstNameChange = (e) => setFirstName(e.target.value)
@@ -30,9 +31,15 @@ export const EditApplicant = ({ setShowEdit, applicant }) => {
               },
             body: JSON.stringify(data),
         })
-        .then((r) => r.json())
-        .then((applicant) => dispatch(applicantEdited(applicant)))
-        setShowEdit(false)
+        .then ((r) => {
+            if (r.ok) {
+                r.json().then ((applicant) => dispatch(applicantEdited(applicant)))
+                setShowEdit(false)
+            }
+            else {
+                r.json().then((errors) => setErrors(errors.errors))
+            }
+        })  
     }
     
     return (
@@ -51,6 +58,7 @@ export const EditApplicant = ({ setShowEdit, applicant }) => {
             <input className="w-full px-3 py-2 mb-2 border rounded-lg" value={city} onChange={onCityChange} />
             <label className="block mb-2 font-bold">State:</label>
             <input className="w-full px-3 py-2 mb-2 border rounded-lg" value={state} onChange={onStateChange} />
+            {errors.length === 0 ? null : errors.map(error => <p className='text-lg text-center text-red-600' key={error}>{error}</p>)}
             <button className='block w-full p-3 text-center text-white duration-300 bg-indigo-500 rounded-lg hover:bg-indigo-600'>Submit</button>
         </form>
     )
