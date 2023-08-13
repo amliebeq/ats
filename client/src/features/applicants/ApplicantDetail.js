@@ -23,11 +23,11 @@ export const ApplicantDetail = () => {
             </div>
             <div className="p-4 mb-4 mr-4 bg-white border rounded-lg shadow-md">
                 <h1>Jobs</h1>
-                {applicant.jobs.length > 0 ? applicant.jobs.map(job => <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline" to={'/jobs'}>{job.title}</Link>) : <p>Not added to any jobs yet</p>}
+                {applicant.jobs.length > 0 ? applicant.jobs.map(job => <Link className="pr-4 font-medium text-blue-600 dark:text-blue-500 hover:underline" to={'/jobs'}>{job.title}</Link>) : <p>Not added to any jobs yet</p>}
             </div>
             <div className="p-4 mb-4 mr-4 bg-white border rounded-lg shadow-md">
                 <h1>Lists</h1>
-                {applicant.lists.length > 0 ? applicant.lists.map(list => <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline" to={`/lists/${list.id}`}>{list.name}</Link>) : <p>Not added to any jobs yet</p>}
+                {applicant.lists.length > 0 ? applicant.lists.map(list => <Link className="pr-4 font-medium text-blue-600 dark:text-blue-500 hover:underline" to={`/lists/${list.id}`}>{list.name}</Link>) : <p>Not added to any lists yet</p>}
             </div>
             <div className="p-4 mb-4 mr-4 bg-white border rounded-lg shadow-md">
                 <Notes applicant={applicant} />

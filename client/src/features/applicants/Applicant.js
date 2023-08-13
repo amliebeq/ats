@@ -16,7 +16,7 @@ export const Applicant = ({ applicant }) => {
     const onAddToJobClick = () => setShowCandidateJobForm(!showCandidateJobForm)
 
     const applicantCard =
-    <div className='break-all'>
+    <div className='break-words'>
         <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline hover:cursor-pointer" to={`/candidates/${applicant.id}`}>{applicant.first_name} {applicant.last_name}</Link>
         <ul>
             <li>{applicant.email}</li>

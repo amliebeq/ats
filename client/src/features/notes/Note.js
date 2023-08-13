@@ -10,7 +10,7 @@ export const Note = ({ note }) => {
         <div className="p-4 mb-4 transition duration-200 transform bg-gray-200 border rounded-lg shadow-md hover:scale-105">
             {edit ? 
             <EditNote setEdit={setEdit} note={note} /> : 
-            <div className='break-all'>
+            <div className='break-words'>
                 <p>{note.body}</p>
                 <p>Date Added {note.created_at.split('').splice(0,10).join('')}</p>
             </div>

@@ -3,7 +3,7 @@ import { RemoveToDo } from './RemoveToDo';
 
 export const ToDo = ({ toDo }) => {
     return (
-        <div className='flex flex-wrap break-all'>
+        <div className='flex flex-wrap break-words'>
             <ul>
                 <li className='pr-4'>{toDo.item}</li>
             </ul>
